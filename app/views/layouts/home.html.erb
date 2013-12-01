@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Tcfnew1" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tcfnew1" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="home">
+      
+
+      <%= render 'layouts/header' %>
+    
+    
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    
+    <%= render 'layouts/footer' %>
+    <!-- Custom Homepage Scripts _____________________________________________-->
+<script>    
+jQuery(window).load(function() {
+
+  // init Cycle for slider
+  $('#slides').after('<div id="circle-pager">').cycle({
+      fx:      'fade', 
+      speed:    800, 
+      timeout:  8000,
+      cleartype:  true,
+      cleartypeNoBg: false,
+      pager: '#circle-pager',
+      next:  '#slider .next1', 
+      prev:  '#slider .prev1',
+      slideResize: false,
+      fit: 0,
+      width: '100%',
+      before:  function(currSlideElement, nextSlideElement) { 
+        // hide elements and put them in start position   
+        $(this).find('.slide-image').css({
+          'opacity': '0',
+          'right': '-50px'
+        });
+        $(this).find('.slide-text').css({
+          'opacity': '0',
+          'left': '-50px'
+        });
+        $(this).find('.slide-text p').css({
+          'opacity': '0',
+          'left': '15px'
+        });
+        $(this).find('.slide-image img').css({
+          'opacity': '0',
+          'right': '-100px'
+        });
+      },
+      after:  function(currSlideElement, nextSlideElement) {      
+        // fade in image
+        $(this).find('.slide-image').animate({
+          'opacity': '1',
+          'right': '0'
+        }, 500, 'linear');
+        // bring the text box from top
+        $(this).find('.slide-text').delay(500).animate({
+          'opacity': '1',
+          'left': '0'
+        }, 500, 'easeOutBack');
+        // bring the paragraphs in
+        $(this).find('.slide-text p:eq(0)').delay(500).animate({
+          'opacity': '1',
+          'left': '0'
+        }, 500, 'easeOutBack');
+        $(this).find('.slide-text p:eq(1)').delay(700).animate({
+          'opacity': '1',
+          'left': '0'
+        }, 500, 'easeOutBack');
+        $(this).find('.slide-text p:eq(2)').delay(900).animate({
+          'opacity': '1',
+          'left': '0'
+        }, 500, 'easeOutBack');
+        $(this).find('.slide-text p:eq(3)').delay(1100).animate({
+          'opacity': '1',
+          'left': '0'
+        }, 500, 'easeOutBack');
+        // bring the front images in
+        $(this).find('.slide-image img:eq(0)').delay(500).animate({
+          'opacity': '1',
+          'right': '0'
+        }, 800, 'easeOutBack');
+        $(this).find('.slide-image img:eq(1)').delay(700).animate({
+          'opacity': '1',
+          'right': '0'
+        }, 800, 'easeOutBack');
+        $(this).find('.slide-image img:eq(2)').delay(900).animate({
+          'opacity': '1',
+          'right': '0'
+        }, 800, 'easeOutBack');
+        $(this).find('.slide-image img:eq(3)').delay(1100).animate({
+          'opacity': '1',
+          'right': '0'
+        }, 800, 'easeOutBack');
+
+      } 
+    });
+  
+
+  // init jCarousel for portfolio pieces
+  $('.sneakpeak-carousel').jcarousel({
+    'wrap': 'both'
+  });
+  $('.sneakpeak-prev').click(function() {
+    $('.sneakpeak-carousel').jcarousel('scroll', '-=1');
+  });
+  $('.sneakpeak-next').click(function() {
+    $('.sneakpeak-carousel').jcarousel('scroll', '+=1');
+  });
+
+}); 
+</script>
+  </body>
+</html>

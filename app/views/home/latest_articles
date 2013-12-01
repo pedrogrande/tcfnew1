@@ -1,0 +1,39 @@
+				<h2>Latest Articles</h2>
+				
+				<article id="post-1" class="post format-standard">
+					<header class="entry-header">
+						<p class="entry-date sub-heading-upper">
+							<i class="fa fa-clock-o"></i> &nbsp;<time datetime="2013-08-26T03:32:44+00:00">August 26, 2013</time>
+						</p><!-- .entry-date -->
+						<h3 class="entry-title"><a href="blog-post.html">Crowdfunding Tips: Why You Need a Killer Video</a></h3>
+					</header><!-- .entry-header -->
+
+					<div class="post-featured-image">
+						<a href="blog-post.html"><img src="vladstudio_mountain_lion_480x320.jpg" alt="" /></a>
+					</div>
+					
+					<div class="entry-content">
+						<p>A website that tracks Kickstarter campaigns has revealed its findings of the four key elements creative start-ups need to get right to maximise their fundraising chances.</p>
+						<p class="more-link"> <a href="blog-post.html">Read More</a></p>
+					</div><!-- .entry-content -->
+				</article><!-- END article.post -->
+				
+				<article id="post-2" class="post format-standard">
+					<header class="entry-header">
+						<p class="entry-date sub-heading-upper">
+							<i class="fa fa-clock-o"></i> &nbsp;<time datetime="2013-08-26T03:32:44+00:00">August 26, 2013</time>			
+						</p><!-- .entry-date -->
+						<h3 class="entry-title"><a href="blog-post.html">Starting a Startup - 101 Essential Files</a></h3>
+					</header><!-- .entry-header -->
+
+					<div class="post-featured-image">
+						<a href="blog-post.html"><img src="images/portfolio/vladstudio_cheshire_kitten_480x320.jpg" alt="" /></a>
+					</div>
+					
+					<div class="entry-content">
+						<p>We’ve pulled together a massive collection of essential files from across the Marketplaces to help you deliver great startup projects, faster.</p>
+						<p class="more-link"> <a href="blog-post.html">Read More</a></p>
+					</div><!-- .entry-content -->
+				</article><!-- END article.post -->				
+				
+				<p><a class="button" href="blog.html">Read all articles</a></p>
