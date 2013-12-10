@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2013-12-09
+  end_date: 2013-12-09
+  class_days: MyString
+  start_time: 2013-12-09 23:09:12
+  finish_time: 2013-12-09 23:09:12
+  location: MyString
+  notes: MyText
+  course_id: 
+
+two:
+  start_date: 2013-12-09
+  end_date: 2013-12-09
+  class_days: MyString
+  start_time: 2013-12-09 23:09:12
+  finish_time: 2013-12-09 23:09:12
+  location: MyString
+  notes: MyText
+  course_id: 

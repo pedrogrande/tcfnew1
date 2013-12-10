@@ -8,58 +8,33 @@
 			<nav id="mainmenu" role="navigation">
 				<ul>
 					<li>
-						<a href="index.html" class="active">The Coder Factory</a>					
+						<%= link_to "The Coder Factory", root_path, style: "font-size: 1.8em;
+						font-weight:100;text-transform:none;" %>					
 					</li>
-					<li><a href="about-us.html">About</a>
-						<!-- <ul class="sub-menu">
-							<li><a href="faqs.html">Left Sidebar</a></li>
-							<li><a href="testimonials.html">Right Sidebar</a></li>
-							<li><a href="team.html">Full Width</a></li>
-						</ul> -->
-					</li>
-					<li><a href="#">Courses <i class="fa fa-angle-down"></i></a>
+				
+					<li><%= link_to courses_path do %>Courses <i class="fa fa-angle-down"></i><% end %>
 						<ul class="sub-menu">
-							<li><a href="about-us.html">Beginner Coder</a></li>
-							<li><a href="elements.html">Rails Coder</a></li>
-							<li><a href="team.html">Angular Coder</a></li>
-							<li><a href="team.html">Expert Coder</a></li>
+							<li><%= link_to "Beginner Coder", courses_path %></li>
+							<li><%= link_to "Rails Coder", courses_path %></li>
+							<li><%= link_to "Angular Coder", courses_path %></li>
+							<li><%= link_to "Expert Coder", courses_path %></li>
 						</ul>
 					</li>
-					<li><a href="portfolio.html">Calendar</a>
-						<!-- <ul class="sub-menu">
-							<li><a href="portfolio.html">Classic</a></li>
-							<li><a href="masonry.html">Masonry style</a></li>
-							<li><a href="photoalbums.html">Photo Albums</a></li>
-							<li><a href="portfolio-single.html">Portfolio Single</a></li>
-						</ul> -->
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Calendar", calendar_path %></li>
+					<li><%= link_to "Blog", blog_path %></li>
+			   		<li><%= link_to "Contact Us", contact_path %></li>
+			   		<li><a href="#" style="color:yellow;"><i class="fa fa-share"></i> Share</a>
+						<ul class="sub-menu">
+							<li><a href="https://twitter.com/share?url=http://thecoderfactory.com&via=coderfactory&text=Learn to code" target="_blank" title="Twitter">Tweet <i class="fa fa-twitter fa-lg fa-fw pull-right"></i></a></li>
+							<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://thecoderfactory.com" target="_blank" title="Facebook">Share <i class="fa fa-facebook fa-lg fa-fw pull-right"></i></a></li>
+							<li><a href="https://plus.google.com/share?url=http://thecoderfactory.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" title="Google+">Circle <i class="fa fa-google-plus fa-lg fa-fw pull-right"></i></a></li>
+							<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://thecoderfactory.com&source=The Coder Factory" target="_blank" title="LinkedIn">Link up<i class="fa fa-linkedin fa-lg fa-fw pull-right"></i> </a></li>
+						</ul>
 					</li>
-					<li><a href="blog.html">Blog</a>
-						<!-- <ul class="sub-menu">
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="blog-post.html">Blog Post</a></li>
-						</ul> -->
-					</li>
-								     		    
+
 				</ul>
 			</nav>
-		
-			<!-- Logo _____________________________________________-->
-			<h1 id="logo">
-			<!-- 	<a href="/" rel="home" title="">The Coder Factory</a>-->
-			</h1> 
-
-			<!-- Address ______________________________________-->
-			<div id="address-block"> 
-				<ul>
-			   		<!-- <li><i class="icon-phone"></i>CALL: &nbsp; (123)-456-9999</li> --> 
-			   		<li><a href="contact.html">Contact Us</a></li>
-			   		<li>Share:</li>
-					<li class="smaller-gap"><a href="https://twitter.com/share?url=http://thecoderfactory.com&via=coderfactory&text=Learn to code" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-					<li class="smaller-gap"><a href="https://www.facebook.com/sharer/sharer.php?u=http://thecoderfactory.com" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-					<li class="smaller-gap"><a href="https://plus.google.com/share?url=http://thecoderfactory.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a></li>
-					<li class="smaller-gap"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://thecoderfactory.com&source=The Coder Factory" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-					
-				</ul>
 			</div>	
 
 		</div> <!-- END .wrapper FOR #sticks-to-top -->
@@ -96,12 +71,11 @@
 						<p>Sign up for the EXPERT CODER course and receive your choice of an iPad Mini or Google Nexus 7.</p>
 					</div>
 					<div class="slide-image">
-						<%= image_tag "slide-image-1a.png", alt: '' %>
-						<%= image_tag "ipadminib.png", alt: '' %>
+						<%= image_tag "ipad_mini.png", alt: '' %>
 					</div>
 				</div>
 				<div class="slide-back">
-					<!-- no background image for this slide -->
+					
 				</div>
 			</li>
 			<li class="slide">
@@ -144,4 +118,4 @@
 	<!--  END #slider -->
 	
 </header>
-<!-- END #header
+<!-- END #header -->

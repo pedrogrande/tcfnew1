@@ -1,5 +1,5 @@
 @import url("editor.css");
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700);
 /* RESET
 --------------------------------------------------------- */
 /* http://meyerweb.com/eric/tools/css/reset/ */
@@ -11,7 +11,7 @@ table{ border-collapse:collapse; border-spacing:0; }
 
 /* BODY DEFAULTS
 --------------------------------------------------------- */
-html { height: 100%; font-family: 'Open Sans', sans-serif; font-size: 62.5%; text-shadow: 0 0 1px rgba(51,51,51,0.2); }
+html { height: 100%; font-family: 'Roboto', sans-serif; font-size: 80%; text-shadow: 0 0 1px rgba(51,51,51,0.2); }
 body { width: 100%; height: 100%; background: #fff; color: #555; font-size: 1.2em; scroll-behavior: smooth; }
 
 p, blockquote { padding: 0 0 20px 0; }
@@ -123,7 +123,7 @@ h4 { font-weight: bold; font-size: 1.0em; margin: 0 0 10px 0; line-height: 1.4; 
 #header nav .sexyselect { display: none; margin: 65px auto 15px auto;  }
 
 #header #sticks-to-top { position: static; background: none; border: 0; width: 100%; z-index: 200; }
-#header.fixed-header #sticks-to-top { position: fixed; top: -45px; height: 100px; z-index: 300; background: #16ABE3; border-bottom: 0px solid #AAAAAB; box-shadow: inset 0 -20px 40px rgba(0,0,0,0.05); 
+#header.fixed-header #sticks-to-top { position: fixed; top: -45px; height: 100px; z-index: 300; background: #16ABE3; /*border-bottom: 0px solid #AAAAAB; box-shadow: inset 0 -20px 40px rgba(0,0,0,0.05)*/; 
 -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 #header.fixed-header #sticks-to-top h1#logo img { height: 40px; margin-top: 30px; }
 #header.fixed-header #sticks-to-top nav > ul > li > a, #header.fixed-header #sticks-to-top #address-block ul li, #header.fixed-header #sticks-to-top #address-block ul li a  { color: #FFF; /*text-shadow: -1px -1px 0px #eee;*/ border-bottom: 0; }
@@ -275,7 +275,7 @@ ul.tags a:hover { color: #1f1f1f; background: #E8E8E8; }
 .accordion-style2 .accordion-title a:before { content: '+'; font-weight: 300; font-size: 1.4em; color: white; position: relative; display: inline-block; width: 20px; height: 20px; line-height: 19px; vertical-align: middle; margin: -2px 15px 0 0; text-align: center; background: #474747; }
 .accordion-style2 .accordion-title a.active:before { background: #0090EC; content: '-'; }
 
-#content .pricing table { float: left; padding: 0 0 15px 0; box-shadow: 0 0 0 1px rgba(0,0,0,0.1); border-collapse: collapse; color: #777; }
+#content .pricing table { font-size: 0.7em;float: left; padding: 0 0 15px 0; box-shadow: 0 0 0 1px rgba(0,0,0,0.1); border-collapse: collapse; color: #777; }
 #content .pricing table.highlighted { position: relative; top: -20px; box-shadow: 0 0 15px 1px rgba(0,0,0,0.15); }
 #content .pricing th { padding: 12px 20px; text-align: center; background: #fff; border: 0; border-bottom: 1px solid #E2E2E2; }
 #content .pricing table.highlighted th { padding: 22px 20px; }
@@ -493,7 +493,12 @@ ______________________________________ */
 
 /* FOOTER
 --------------------------------------------------------- */
-#footer { clear: both; background: #1b1b1b url('backbg.png'); width: 100%; padding: 35px 0 135px 0; font-size: 0.9em; color: #ebebeb; line-height: 1.7; position: relative; z-index: 5; }
+/*#footer { clear: both; background: #1b1b1b url('backbg.png'); width: 100%; padding: 35px 0 135px 0; font-size: 0.9em; color: #ebebeb; line-height: 1.7; position: relative; z-index: 5; }
+*/
+
+#footer { clear: both; background: #bdc3c7; width: 100%; padding: 35px 0 135px 0; font-size: 0.9em; color: #ebebeb; line-height: 1.7; position: relative; z-index: 5; }
+
+
 #footer h2, #footer h3 { font-size: 1.3em; color: white; }
 #footer ul { list-style: none; }
 #footer ul li { padding: 12px 0 8px 0; background: url('line-horz.png') left top repeat-x; }
@@ -505,11 +510,11 @@ ______________________________________ */
 #footer a:hover { color: white; }
 
 #footer .widgets { width: 103.4%; }
-.footerbox { width: 20%; float: left; background: url('line-vert.png') left top repeat-y; min-height: 220px; padding-right: 2.5%; padding-left: 2.5%; }
+.footerbox { width: 25%; float: left; background: url('line-vert.png') left top repeat-y; min-height: 220px; padding-right: 2.5%; padding-left: 2.5%; }
 .footerbox:first-child { background: none; padding-left: 0; }
 
 #footer .top { text-align: center; background: url('line-horz.png') left bottom repeat-x;  padding: 0 0 10px 0; margin: 0 0 45px 0; }
-#footer .bottom { clear: both; margin: 50px 0 0 0; padding: 25px 0 0 0; background: url('line-horz.png') left top repeat-x; font-size: 1em; color: grey; }
+ #footer .bottom { clear: both; margin: 50px 0 0 0; padding: 25px 0 0 0; background: url('line-horz.png') left top repeat-x; font-size: 1em; color: grey; }
 
 #footer .top h3 { font-size: 1.4em; }
 #footer .top i { margin: 0 3px; }
@@ -702,3 +707,4 @@ ______________________________________ */
 	
 	
 }
+.btn-xl{padding:20px 26px;font-size:18px;line-height:1.33;border-radius:6px}

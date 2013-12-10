@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Tcfnew1" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Web application development training - Ruby on Rails & Angular.js - The Coder Factory" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tcfnew1" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -16,7 +16,8 @@
     
        <%= render 'layouts/messages' %>
        <%= yield %>
-    
+        
+       <%= render 'layouts/back_to_top' %>
     <%= render 'layouts/footer' %>
     <!-- Custom Homepage Scripts _____________________________________________-->
 <script>    

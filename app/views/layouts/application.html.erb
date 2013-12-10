@@ -12,9 +12,13 @@
     <header>
       <%= render 'layouts/header' %>
     </header>
-    <main role="main">
+    <main role="main" class="container">
+    <header id="content-header">
        <%= render 'layouts/messages' %>
        <%= yield %>
+       <%= render 'layouts/sidebar' %>
+    </div> <!-- END .wrapper -->
+       <%= render 'layouts/back_to_top' %>
     </main>
   </body>
 </html>

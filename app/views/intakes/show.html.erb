@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @intake.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @intake.end_date %>
+</p>
+
+<p>
+  <strong>Class days:</strong>
+  <%= @intake.class_days %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @intake.start_time %>
+</p>
+
+<p>
+  <strong>Finish time:</strong>
+  <%= @intake.finish_time %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @intake.location %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @intake.notes %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @intake.course %>
+</p>
+
+<%= link_to 'Edit', edit_intake_path(@intake) %> |
+<%= link_to 'Back', intakes_path %>

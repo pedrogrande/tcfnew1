@@ -1,0 +1,39 @@
+<h1>Listing courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Lead</th>
+      <th>Intro</th>
+      <th>Description</th>
+      <th>Designed for</th>
+      <th>Price</th>
+      <th>Duration</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.lead %></td>
+        <td><%= course.intro %></td>
+        <td><%= course.description %></td>
+        <td><%= course.designed_for %></td>
+        <td><%= course.price %></td>
+        <td><%= course.duration %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>

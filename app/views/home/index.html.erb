@@ -11,10 +11,10 @@
 			<!-- <div><p class="sub-heading-upper">Be inspired and get motivated</p></div> -->
 			<div class="row">
 				<div class="pull-right">
-					<br /><a class="button big" href="#">RESERVE YOUR PLACE<br>  <em class="small">Limited spaces!</em></a>
+					<br /><a class="btn btn-success btn-xl" href="#">RESERVE YOUR PLACE<br>  <i class="fa fa-asterisk fa-spin"></i> <em class="small">Limited spaces!</em> <i class="fa fa-asterisk fa-spin"></i></a>
 				</div>
 				
-				<div class="col-md-7">
+				<div class="col-md-9">
 					<h2>We know you have it in you, and we're here to help.</h2>
 					<p>Learning to build your own web application is easier than you think. If you want to create your own tech startup company or make apps you can sell, you've come to the right place.</p>
 
@@ -78,7 +78,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="button small blue">More info</a> <a href="#" class="button small green">Sign up!</a></td></tr>
+						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -103,7 +103,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="button small blue">More info</a> <a href="#" class="button small">Sign up!</a></td></tr>
+						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -125,7 +125,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="button small blue">More info</a> <a href="#" class="button small">Sign up!</a></td></tr>
+						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -147,7 +147,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="button small blue">More info</a> <a href="#" class="button">Sign up!</a></td></tr>
+						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
 					</tfoot>
 				</table>
 			</div>
@@ -166,6 +166,7 @@
 			
 			<!-- Testimonials _____________________________________________-->
 			<div class="col-md-6 widget">
+				<div class="row">
 				<h2>Testimonials</h2>
 				<p class="sub-heading-upper">What Our Graduates Say</p>
 				
@@ -188,8 +189,29 @@
 						<p class="author"><strong>Jane Austin</strong> &nbsp; CEO of some other Company</p>
 					</footer>
 				</div>  --><!-- END .quote -->
+				</div>
+				<div class="row">
+								<h2>Latest Articles</h2>
 				
-				<div></div>
+				<article id="post-1" class="post format-standard">
+					<header class="entry-header">
+						<p class="entry-date sub-heading-upper">
+							<i class="fa fa-clock-o"></i> &nbsp;<time datetime="2013-08-26T03:32:44+00:00">August 26, 2013</time>
+						</p><!-- .entry-date -->
+						<h3 class="entry-title"><a href="blog-post.html">Crowdfunding Tips: Why You Need a Killer Video</a></h3>
+					</header><!-- .entry-header -->
+
+					<div class="post-featured-image">
+						<a href="blog-post.html"><%= image_tag "vladstudio_mountain_lion_480x320.jpg", alt: "" %></a>
+					</div>
+					
+					<div class="entry-content">
+						<p>A website that tracks Kickstarter campaigns has revealed its findings of the four key elements creative start-ups need to get right to maximise their fundraising chances.</p>
+						<p class="more-link"> <a href="blog-post.html">Read More</a></p>
+					</div><!-- .entry-content -->
+				</article><!-- END article.post -->
+								<p><a class="btn btn-primary" href="blog.html">Read all articles</a></p>
+				</div>
 				<!-- <p class="pull-right"><a class="button" href="blog.html">More testimonials</a></p> -->
 			</div> <!-- END .widget -->
 			<!-- From the blog _____________________________________________-->
@@ -209,11 +231,3 @@
 	
 </section>
 <!-- END #content -->
-
-
-<a id="back-to-top" href="#" title="Back to top"><i class="fa fa-angle-up"></i></a>
-
-
-
-
-
