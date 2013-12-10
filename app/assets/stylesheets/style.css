@@ -438,7 +438,7 @@ ul li.piece { width: 270px; padding: 0; float: left; margin: 0 10px 0 0; positio
 #menu-portfolio-items ul.tags { padding: 15px 0 10px 0 !important; }
 #menu-portfolio-items.boxed ul.tags li a { background: white; }
 #menu-portfolio-items.boxed ul.tags li a.active { background: #95B83F; }
-#menu-portfolio-items.boxed { margin: -45px 0 12px 0; background: #E9E9E9 url('backbg.png')
+#menu-portfolio-items.boxed { margin: -45px 0 12px 0; background: #E9E9E9 url('backbg.png');
 
 
 
