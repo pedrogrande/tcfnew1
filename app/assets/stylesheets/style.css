@@ -114,7 +114,7 @@ h4 { font-weight: bold; font-size: 1.0em; margin: 0 0 10px 0; line-height: 1.4; 
 #header nav ul.sub-menu li:first-child { border-radius: 7px 7px 0 0; padding-top: 8px; }
 #header nav ul.sub-menu li:last-child { border-radius: 0 0 7px 7px; padding-bottom: 10px; }
 #header nav ul.sub-menu li:first-child:last-child { border-radius: 7px; padding-top: 8px; }
-#header nav ul.sub-menu li a { display: block; padding: 10px 0 6px 0; margin: 0 16px; width: 120px;  line-height: 1.4; text-align: left; background: url('line-horz.png') left top repeat-x; font-size: 0.85em; }
+/*#header nav ul.sub-menu li a { display: block; padding: 10px 0 6px 0; margin: 0 16px; width: 120px;  line-height: 1.4; text-align: left; background: url('line-horz.png') left top repeat-x; font-size: 0.85em; }*/
 #header nav ul.sub-menu li:first-child a { background: none; }
 #header nav ul.sub-menu li a:hover { color: #50d5f5; }
 #header nav ul.sub-menu ul { left: 151px; top: -35px; }
@@ -501,7 +501,7 @@ ______________________________________ */
 
 #footer h2, #footer h3 { font-size: 1.3em; color: white; }
 #footer ul { list-style: none; }
-#footer ul li { padding: 12px 0 8px 0; background: url('line-horz.png') left top repeat-x; }
+/*#footer ul li { padding: 12px 0 8px 0; background: url('line-horz.png') left top repeat-x; }*/
 #footer ul li:first-child { background: none; padding-top: 0; }
 /*#footer i { background: #111; }*/
 #footer a:hover i { background: #1b1b1b; 
@@ -514,7 +514,7 @@ ______________________________________ */
 .footerbox:first-child { background: none; padding-left: 0; }
 
 #footer .top { text-align: center; background: url('line-horz.png') left bottom repeat-x;  padding: 0 0 10px 0; margin: 0 0 45px 0; }
- #footer .bottom { clear: both; margin: 50px 0 0 0; padding: 25px 0 0 0; background: url('line-horz.png') left top repeat-x; font-size: 1em; color: grey; }
+ /*#footer .bottom { clear: both; margin: 50px 0 0 0; padding: 25px 0 0 0; background: url('line-horz.png') left top repeat-x; font-size: 1em; color: grey; }*/
 
 #footer .top h3 { font-size: 1.4em; }
 #footer .top i { margin: 0 3px; }
