@@ -1,20 +1,3 @@
-ActsAsTaggableOn::Tag.create!([
-  {name: "#learntocode"},
-  {name: "#coding"},
-  {name: "free tutorials"},
-  {name: "free resources"}
-])
-ActsAsTaggableOn::Tagging.create!([
-  {tag_id: 1, taggable_id: 2, taggable_type: "Post", tagger_id: nil, tagger_type: nil, context: "tags"},
-  {tag_id: 2, taggable_id: 2, taggable_type: "Post", tagger_id: nil, tagger_type: nil, context: "tags"},
-  {tag_id: 3, taggable_id: 2, taggable_type: "Post", tagger_id: nil, tagger_type: nil, context: "tags"},
-  {tag_id: 4, taggable_id: 2, taggable_type: "Post", tagger_id: nil, tagger_type: nil, context: "tags"}
-])
-User.create!([
-  {email: "pete@thecoderfactory.com", encrypted_password: "$2a$10$oPYmOla7un4FxhzEu.luEOGIaMuQWbnVLAfGdAmoFDG7UVidD.7du", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2013-12-15 00:18:10", sign_in_count: 1, current_sign_in_at: "2013-12-15 00:18:10", last_sign_in_at: "2013-12-15 00:18:10", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", name: "Pete Argent", slug: "pete-argent"},
-  {email: "dan@thecoderfactory.com", encrypted_password: "$2a$10$/meO6ZCpSek2vP6ULBkP6OQWqQHyf8lpNBzPtQGpNZw3ipx3ltXFW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, name: "Dan Siepen", slug: "dan-siepen"},
-  {email: "andrew@thecoderfactory.com", encrypted_password: "$2a$10$Xj.aC3QFVjE6orNRvBZ6beYwf57HQoRDZMEicZRBDUF1gmL9ZtDIy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, name: "Andrew Kemp", slug: "andrew-kemp"}
-])
 Category.create!([
   {name: "Coding"},
   {name: "Startups"},
@@ -44,6 +27,16 @@ Role.create!([
   {name: "admin", resource_id: nil, resource_type: nil},
   {name: "user", resource_id: nil, resource_type: nil}
 ])
+puts 'SETTING UP DEFAULT USER LOGIN'
+user = User.create! :name => 'Pete Argent', :email => 'pete@thecoderfactory.com', :password => 'pleaseme', :password_confirmation => 'pleaseme'
+puts 'New user created: ' << user.name
+user2 = User.create! :name => 'Dan Siepen', :email => 'dan@thecoderfactory.com', :password => 'pleaseme', :password_confirmation => 'pleaseme'
+puts 'New user created: ' << user2.name
+user2 = User.create! :name => 'Andrew Kemp', :email => 'andrew@thecoderfactory.com', :password => 'pleaseme', :password_confirmation => 'pleaseme'
+puts 'New user created: ' << user2.name
+user.add_role :admin
+user2.add_role :admin
+user3.add_role :admin
 UserProfile.create!([
   {user_id: 1, twitter: "@pedrogrande", linkedin: "http://au.linkedin.com/in/peterargent/", github: "pedrogrande", startupcommunity: "http://www.thestartupcommunity.com/user_profiles/pete-argent", google_plus: "+PeterArgent", bio: "Pete's three main passions in life are entrepreneurship, coding and teaching - so running The Coder Factory is his dream job!", title: "Director, Instructor", image: "pete1.png", website: "http://thecoderfactory.com/pete-argent"},
   {user_id: 2, twitter: "@dansiepen", linkedin: "http://au.linkedin.com/pub/daniel-siepen/71/537/b33", github: "dansiepz", startupcommunity: "http://www.thestartupcommunity.com/user_profiles/dan-siepen", google_plus: "109604804291157840849", bio: "I am a passionate marketer and coder who loves what he does. \r\n", title: "Community Manager", image: "dan-siepen.jpg", website: "http://dansiepen.com"},
