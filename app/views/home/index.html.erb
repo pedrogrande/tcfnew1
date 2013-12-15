@@ -15,7 +15,7 @@
 				</div>
 				
 				<div class="col-md-9">
-					<h2>We know you have it in you, and we're here to help.</h2>
+					<h2>Learn to code: Improve your life.</h2>
 					<p>Learning to build your own web application is easier than you think. If you want to create your own tech startup company or make apps you can sell, you've come to the right place.</p>
 
 				</div>
@@ -58,6 +58,7 @@
 	<!-- Text box _____________________________________________-->
 	<div class="grey-box container">
 		<div class="wrapper row">
+		<h2>The Coder Factory Courses</h2>
 			<div class="pricing four">
 				
 				<table>
@@ -78,7 +79,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
+						<tr><td><a href="/courses/beginner-coder" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Enrol</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -103,7 +104,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
+						<tr><td><a href="/courses/rails-coder" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Enrol</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -125,7 +126,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
+						<tr><td><a href="/courses/angular-coder" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Enrol</a></td></tr>
 					</tfoot>
 				</table>
 				
@@ -147,7 +148,7 @@
 						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
 					</tbody>
 					<tfoot>
-						<tr><td><a href="#" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Sign up!</a></td></tr>
+						<tr><td><a href="/courses/expert-coder" class="btn btn-primary">More info</a> <a href="#" class="btn btn-success">Enrol</a></td></tr>
 					</tfoot>
 				</table>
 			</div>
@@ -190,27 +191,28 @@
 					</footer>
 				</div>  --><!-- END .quote -->
 				</div>
+				<hr>
 				<div class="row">
 								<h2>Latest Articles</h2>
 				
-				<article id="post-1" class="post format-standard">
+				<article id="post-1" class="post format-standard well">
 					<header class="entry-header">
 						<p class="entry-date sub-heading-upper">
-							<i class="fa fa-clock-o"></i> &nbsp;<time datetime="2013-08-26T03:32:44+00:00">August 26, 2013</time>
+							<i class="fa fa-clock-o"></i> &nbsp;<time datetime="<%= @post.created_at %>"><%= @post.created_at.strftime('%A, %e %B %Y') %></time>
 						</p><!-- .entry-date -->
-						<h3 class="entry-title"><a href="blog-post.html">Crowdfunding Tips: Why You Need a Killer Video</a></h3>
+						<h3 class="entry-title"><%= link_to @post.title, @post %></h3>
 					</header><!-- .entry-header -->
 
 					<div class="post-featured-image">
-						<a href="blog-post.html"><%= image_tag "vladstudio_mountain_lion_480x320.jpg", alt: "" %></a>
+						<%= link_to @post do %><%= image_tag "blog_image.png", alt: "" %><% end %>
 					</div>
 					
 					<div class="entry-content">
-						<p>A website that tracks Kickstarter campaigns has revealed its findings of the four key elements creative start-ups need to get right to maximise their fundraising chances.</p>
-						<p class="more-link"> <a href="blog-post.html">Read More</a></p>
+						<p><%= @post.lead.html_safe %></p>
+						<p class="more-link"><%= link_to "Read more", @post %></p>
 					</div><!-- .entry-content -->
 				</article><!-- END article.post -->
-								<p><a class="btn btn-primary" href="blog.html">Read all articles</a></p>
+								<p><%= link_to "Read all articles", blog_path, class: "btn btn-primary" %></p>
 				</div>
 				<!-- <p class="pull-right"><a class="button" href="blog.html">More testimonials</a></p> -->
 			</div> <!-- END .widget -->

@@ -3,17 +3,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Web application development training - Ruby on Rails & Angular.js - The Coder Factory" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tcfnew1" %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Coder Factory" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body class="home">
-      
-
-      <%= render 'layouts/header' %>
-    
-    
+      <!-- HEADER _____________________________________________-->
+      <header role="banner" id="header">
+        <%= render 'layouts/header' %>
+        <%= render 'layouts/slider' %>
+      </header>
        <%= render 'layouts/messages' %>
        <%= yield %>
         

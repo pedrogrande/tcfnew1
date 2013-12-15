@@ -1,5 +1,4 @@
-<!-- HEADER _____________________________________________-->
-<header role="banner" id="header">
+
 
 	<div id="sticks-to-top">
 		<div class="wrapper">
@@ -9,21 +8,20 @@
 				<ul>
 					<li>
 						<%= link_to "The Coder Factory", root_path, style: "font-size: 1.8em;
-						font-weight:100;text-transform:none;" %>					
+						font-weight:100;text-transform:none;", class: ('active' if current_page?(root_path)), 'data-no-turbolink' => true %>					
 					</li>
-				
-					<li><%= link_to courses_path do %>Courses <i class="fa fa-angle-down"></i><% end %>
+
+					<li><a href="/web-development-and-javascript-courses" class="<%= 'active' if current_page?(courses_path)%>">Courses <i class="fa fa-angle-down"></i>
 						<ul class="sub-menu">
-							<li><%= link_to "Beginner Coder", courses_path %></li>
-							<li><%= link_to "Rails Coder", courses_path %></li>
-							<li><%= link_to "Angular Coder", courses_path %></li>
-							<li><%= link_to "Expert Coder", courses_path %></li>
+							<% @courses.each do |course| %>
+								<li><%= link_to course.title, course %></li>
+							<% end %>
 						</ul>
 					</li>
-					<li><%= link_to "About", about_path %></li>
-					<li><%= link_to "Calendar", calendar_path %></li>
-					<li><%= link_to "Blog", blog_path %></li>
-			   		<li><%= link_to "Contact Us", contact_path %></li>
+					<li><%= link_to "About", about_path, class: ('active' if current_page?(about_path)) %></li>
+					
+					<li><%= link_to "Blog", blog_path, class: ('active' if current_page?(blog_path)) %></li>
+			   		<li><%= link_to "Contact Us", contact_path, class: ('active' if current_page?(contact_path)), 'data-no-turbolink' => true %></li>
 			   		<li><a href="#" style="color:yellow;"><i class="fa fa-share"></i> Share</a>
 						<ul class="sub-menu">
 							<li><a href="https://twitter.com/share?url=http://thecoderfactory.com&via=coderfactory&text=Learn to code" target="_blank" title="Twitter">Tweet <i class="fa fa-twitter fa-lg fa-fw pull-right"></i></a></li>
@@ -41,81 +39,7 @@
 	</div>  
 	<!-- END #sticks-to-top -->
 
-	<!-- Slider _____________________________________________-->
-	<section id="slider">
-		<a href="javascript:void(0)" class="prev1"></a>
-		<a href="javascript:void(0)" class="next1"></a>
-		<ul id="slides">
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						<!-- <p class="sub-heading-upper">Embrace your technological future!</p> -->
-						<p class="big">Learn to code:<br> change your life.</p>
-						<p>It's not that hard to learn to code. Anyone can do it. Eleven year old boys and girls are selling apps on the App store.</p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "slide-image-1a.png", alt: '' %>
-						<%= image_tag "slide-image-1b.png", alt: '' %>
-						<%= image_tag "slide-image-1c.png", alt: '' %>
-						<%= image_tag "slide-image-1d.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					<!-- no background image for this slide -->
-				</div>
-			</li>
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						<p class="big">Free iPad Mini<br> or Nexus 7.</p>
-						<p>Sign up for the EXPERT CODER course and receive your choice of an iPad Mini or Google Nexus 7.</p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "ipad_mini.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					
-				</div>
-			</li>
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						
-						<p class="big">Can't find a<br>tech co-founder?</p>
-						<p>Learn to code and build your own MVP. Then you have something real to inspire developers, investors and even customers.</p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "slide-image-1a.png", alt: '' %>
-						<%= image_tag "slide-image-1b.png", alt: '' %>
-						<%= image_tag "slide-image-1c.png", alt: '' %>
-						<%= image_tag "slide-image-1d.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					<!-- no background image for this slide -->
-				</div>
-			</li>
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						<p class="big">Learn to code:<br> change your life.</p>
-						<p>It's not that hard to learn to code. Anyone can do it. Eleven year old boys and girls are selling apps on the App store.</p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "slide-image-1a.png", alt: '' %>
-						<%= image_tag "slide-image-1b.png", alt: '' %>
-						<%= image_tag "slide-image-1c.png", alt: '' %>
-						<%= image_tag "slide-image-1d.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					<!-- no background image for this slide -->
-				</div>
-			</li>
-		</ul>
-	</section>
-	<!--  END #slider -->
 	
-</header>
+	
+
 <!-- END #header -->

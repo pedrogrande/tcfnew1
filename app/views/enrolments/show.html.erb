@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @enrolment.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @enrolment.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @enrolment.phone %>
+</p>
+
+<p>
+  <strong>Referrer:</strong>
+  <%= @enrolment.referrer %>
+</p>
+
+<%= link_to 'Edit', edit_enrolment_path(@enrolment) %> |
+<%= link_to 'Back', enrolments_path %>

@@ -15,12 +15,12 @@ html { height: 100%; font-family: 'Roboto', sans-serif; font-size: 80%; text-sha
 body { width: 100%; height: 100%; background: #fff; color: #555; font-size: 1.2em; scroll-behavior: smooth; }
 
 p, blockquote { padding: 0 0 20px 0; }
-strong, label, input, button, .button { font-family: 'Open Sans', sans-serif; font-weight: bold; }
+strong, label, input, button, .button { font-family: 'Roboto', sans-serif; font-weight: bold; }
 nav ul { list-style: none; }
 em { font-style: italic; } 
-input, textarea { font-family: 'Open Sans', sans-serif; vertical-align: middle; }
-select { font-family: 'Open Sans', sans-serif; }
-input[type="submit"], input[type="button"], button, .button { font-family: 'Open Sans', sans-serif; font-weight: bold; vertical-align: middle; }
+input, textarea { font-family: 'Roboto', sans-serif; vertical-align: middle; }
+select { font-family: 'Roboto', sans-serif; }
+input[type="submit"], input[type="button"], button, .button { font-family: 'Roboto', sans-serif; font-weight: 400; vertical-align: middle; }
 table td, table th { text-align: left; }
 table th { font-weight: bold; }
 hr { clear: both; background: transparent; height: 0px; border: 0; border-bottom: 1px solid white; border-top: 1px solid #ebebeb; margin: 0 0 18px 0;  }
@@ -33,12 +33,12 @@ a:hover { color: black; text-decoration: none;
 --------------------------------------------------------- */
 label { display: block; padding: 5px 0 5px 0; font-size: 1.0em; font-weight: 400; }
 
-input[type=text],  input[type=email],  input[type=tel],  input[type=password],  textarea { border: 0; outline: 0; background: #f8f8f8;  width: 98%; color: #747474; height: 20px; padding: 4px 0 4px 7px; -webkit-appearance: none; -webkit-focus-ring-color: none; border: 1px solid #e8e8e8; border-radius: 4px; }
+/*input[type=text],  input[type=email],  input[type=tel],  input[type=password],  textarea { border: 0; outline: 0; background: #f8f8f8;  width: 98%; color: #747474;  padding: 4px 0 4px 7px; -webkit-appearance: none; -webkit-focus-ring-color: none; border: 1px solid #e8e8e8; border-radius: 4px; }
 select { outline: 0 !important; }
 input[type=text]:focus,  input[type=email]:focus,  input[type=tel]:focus,  input[type=password]:focus,  textarea:focus { border-color: #d8d8d8; }
-
-input[type=submit], input[type=button], button, .button { display: inline-block; height: auto; padding: 6px 18px 7px 18px; color: white; font-size: 0.95em; line-height: 1.6; text-align: center; cursor: pointer;  border: 1px solid rgba(0,0,0,0.2); border-bottom-color: rgba(0,0,0,0.3); text-decoration: none; text-shadow: 1px -1px 0px rgba(0,0,0,0.3); border-radius: 5px; box-shadow: inset 0 1px 0px rgba(255,255,255,0.4); margin: 2px 0; }
-input[type=submit]:hover, input[type=button]:hover, button:hover, .button:hover { color: white; background-image: none; box-shadow: 0 2px 2px rgba(0,0,0,0.2);  }
+*/
+/*input[type=submit], input[type=button], button, .button { display: inline-block; height: auto; padding: 6px 18px 7px 18px; color: white; font-size: 0.95em; line-height: 1.6; text-align: center; cursor: pointer;  border: 1px solid rgba(0,0,0,0.2); border-bottom-color: rgba(0,0,0,0.3); text-decoration: none; text-shadow: 1px -1px 0px rgba(0,0,0,0.3); border-radius: 5px; box-shadow: inset 0 1px 0px rgba(255,255,255,0.4); margin: 2px 0; }*/
+/*input[type=submit]:hover, input[type=button]:hover, button:hover, .button:hover { color: white; background-image: none;   }*/
 /*.green {background: #95B83F url('shadow-for-buttons.png') repeat-x left bottom;}
 .blue {background: #0090EC url('shadow-for-buttons.png') repeat-x left bottom;}*/
 
@@ -192,6 +192,7 @@ p > span.sub-heading-upper { margin-bottom: 0; }
 .facebook {background: #425F9C;}
 .twitter {background: #00ACEE;}
 .linkedin {background: #1A85BC;}
+.github {background: #333333;}
 .google-plus {background: #DD4B39;}
 .circle-icons i { border-radius: 16px; }
 .circle-icons.big i { width: 70px; height: 70px; line-height: 70px; border-radius: 35px; font-size: 1.3em; margin-bottom: 20px; }
@@ -337,7 +338,7 @@ p.more-link a { border-bottom: 1px dotted; font-size: 0.9em; position: relative;
 #content #related-posts .gallery { margin-top: -15px; }
 #content #related-posts .gallery .gallery-item { opacity: 1; display: block; }
 
-#map { position: relative; width: 100%;	height: 440px; margin: -45px 0 35px 0; color: white; }
+#map { position: relative; width: 100%;	height: 440px; margin: -60px 0 35px 0; color: white; }
 #map-content { position: relative; width: 100%;	height: 440px; }
 
 #content .input-block.p50.right { width: 46%; padding-right: 1%; }
@@ -686,3 +687,5 @@ ______________________________________ */
 	
 }
 .btn-xl{padding:20px 26px;font-size:18px;line-height:1.33;border-radius:6px}
+.address {font-size:70%;}
+.video-still { max-height: 200px;}

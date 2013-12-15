@@ -1,16 +1,29 @@
-<%= simple_form_for(@post) do |f| %>
+<%= simple_form_for @post, :html => {:multipart => true} do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :lead %>
-    <%= f.input :content %>
-    <%= f.input :image %>
+  <div class="form-group">
+    <%= f.association :categories, as: :check_boxes %>
+  </div>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :lead, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, input_html: { class: 'form-control', rows: 15 } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :image, as: :file %>
+  </div>
+  <div class="form-group">
     <%= f.input :publish %>
-    <%= f.input :slug %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.input :tag_list, :label => 'Tags', input_html: { class: 'form-control' } %>
   </div>
 
-  <div class="form-actions">
+  
     <%= f.button :submit %>
-  </div>
+ 
 <% end %>

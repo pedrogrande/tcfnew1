@@ -2,23 +2,31 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Tcfnew1" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Tcfnew1" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "The Coder Factory" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Coder Factory" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/header' %>
-    </header>
-    <main role="main" class="container">
-    <header id="content-header">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-       <%= render 'layouts/sidebar' %>
+  <!-- HEADER _____________________________________________-->
+  <header role="banner" id="header">
+    <%= render 'layouts/header' %>
+  </header>
+    <%= render 'layouts/page_title' %>
+    <%= render 'layouts/map' if current_page?(contact_path) %>
+    <div class="wrapper">
+      <section id="content" class="full-width" role="main">
+        
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+          
+        
+      </section><!-- END #content -->
     </div> <!-- END .wrapper -->
-       <%= render 'layouts/back_to_top' %>
-    </main>
+    <%= render 'layouts/back_to_top' %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

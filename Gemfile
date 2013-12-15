@@ -11,6 +11,18 @@ gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'devise'
 gem 'simple_form'
 gem 'thin'
+gem 'friendly_id', '~> 5.0.0'
+gem 'jquery-turbolinks'
+gem "cancan"
+gem "rolify"
+gem "carrierwave"
+gem "fog"
+gem 'truncate_html'
+gem 'gravatar_image_tag'
+gem 'acts-as-taggable-on'
+gem 'will_paginate', '~> 3.0'
+gem 'seed_dump'
+gem "mailchimp-api", "~> 2.0.4"
 group :development do
   gem 'better_errors'
   gem 'sqlite3'

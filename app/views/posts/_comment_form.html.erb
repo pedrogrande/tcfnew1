@@ -1,0 +1,19 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :post_id, input_html: { value: @post.id }, as: :hidden%>
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :email, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :website, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :content, label: 'Your reply', input_html: { class: 'form-control', rows: '5'} %>
+  </div>
+
+    <%= f.submit 'Reply', class: 'btn btn-primary' %>
+<% end %>

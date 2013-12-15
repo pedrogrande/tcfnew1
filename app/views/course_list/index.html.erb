@@ -1,0 +1,24 @@
+<%= content_for :page_title, 'Web development and javascript courses' %>
+<%= content_for :breadcrumb, 'Courses' %>
+<!-- 
+<p class="sub-heading-upper">The Coder Factory Courses</p> -->
+		
+<div class="row">
+	<% @courses.each_with_index do |course, index| %>
+		<% if (index + 1)%2 != 0 %>
+			</div><div class="row">
+		<% end %>
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h2 class="panel-title"><%= link_to course.title, course %><br><small><%= course.duration %> | AUD <%= course.price %></small></h2>
+				</div>
+				<div class="panel-body">
+					<h3><%= course.lead %></h3>
+					<p><%= course.intro %></p>
+					<%= link_to 'Find out more', course, class: 'btn btn-info btn-lg' %>
+				</div>
+			</div>
+		</div>
+<% end %>
+</div>

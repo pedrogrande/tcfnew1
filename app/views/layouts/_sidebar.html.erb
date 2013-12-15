@@ -2,14 +2,14 @@
 		<aside id="sidebar">
 
 			<div class="widget">
-				<h3>Blog Categories</h3>
+				<h3>Categories</h3>
 				<ul class="sidemenu">
-					<li><a href="#">Design</a></li>
-					<li><a href="#">Awards &amp; Recognition</a></li>
-					<li><a href="#">Competitions</a></li>
-					<li><a href="#">Travel &amp; Tourism</a></li>
-					<li><a href="#">Direct Mail</a></li>
-					<li><a href="#">Environment</a></li>
+					<% @categories.each do |category| %>
+						<% if category.posts.count > 0 %>
+							<li><%= link_to category.name, blog_path(:category => category) %></li>
+						<% end %>
+					<% end %>
+					
 				</ul>
 			</div><!-- END .widget -->
 
@@ -17,52 +17,27 @@
 			<div class="widget">
 				<h3>Popular Tags</h3>
 				<ul class="tags">
-					<li><a href="#">Inspiration</a></li>
-					<li><a href="#">AJAX</a></li>
-					<li><a href="#">HTML5</a></li>
-					<li><a href="#">jQuery</a></li>
-					<li><a href="#">CSS3</a></li>
-					<li><a href="#">Photoshop</a></li>
-					<li><a href="#">PHP</a></li>
-					<li><a href="#">WordPress</a></li>
-					<li><a href="#">Design</a></li>
-					<li><a href="#">Responsive</a></li>
-					<li><a href="#">Envato</a></li>
-					<li><a href="#">Sexy</a></li>
+					<% Post.tag_counts.each do |tag| %>
+					<li><%= link_to tag, blog_path(:tag => tag) %></li>
+					<% end %>
 				</ul>
 				<div class="clear"></div>
 			</div>
 			
 			<div class="widget">
-				<h3>Popular Posts</h3>
+				<h3>Recent Posts</h3>
 				<ul class="popular-posts">
+					<% @recent_posts.each do |recent_post| %>
 					<li>
 						<div class="post-thumb"> 
-							<a href="#"><img src="images/portfolio/vladstudio_books_color3_480x320.jpg" alt=""></a>
+							<%= link_to recent_post do %><%= image_tag recent_post.image %><% end %>
 						</div>
 						<div class="entry-summary">
-							<h4><a href="#">Once Upon a Time, There Was a Template...</a></h4>
-							<p class="entry-meta"> May 23rd, 2013</p>
+							<h4><%= link_to recent_post.title, recent_post %></h4>
+							<p class="entry-meta"> <%= recent_post.created_at.strftime('%e %B %Y') %></p>
 						</div><div class="clear"></div>
 					</li>
-					<li>
-						<div class="post-thumb"> 
-							<a href="#"><img src="images/portfolio/vladstudio_cheshire_kitten_480x320.jpg" alt=""></a>
-						</div>
-						<div class="entry-summary">
-							<h4><a href="#">Mistakes I've Made (And Lessons Learned Along the Way)</a></h4>
-							<p class="entry-meta"> May 23rd, 2013</p>
-						</div><div class="clear"></div>
-					</li>
-					<li>
-						<div class="post-thumb"> 
-							<a href="#"><img src="images/portfolio/vladstudio_alice_dragon_tree_480x320.jpg" alt=""></a>
-						</div>
-						<div class="entry-summary">
-							<h4><a href="#">Introduction to Photoshop Scripting</a></h4>
-							<p class="entry-meta"> May 23rd, 2013</p>
-						</div><div class="clear"></div>
-					</li>
+					<% end %>
 				</ul>
 			</div>
 			

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Web Development Articles - The Coder Factory Blog" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Coder Factory" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <header role="banner" id="header">
+    <%= render 'layouts/header' %>
+  </header>
+    <%= render 'layouts/page_title' %>
+    <div class="wrapper">
+      <section id="content" class="full-width" role="main">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+          <%= render 'layouts/sidebar' %>
+      </section><!-- END #content -->
+    </div> <!-- END .wrapper -->
+    <%= render 'layouts/back_to_top' %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

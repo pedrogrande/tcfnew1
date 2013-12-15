@@ -1,13 +1,7 @@
-
-  <div class="wrapper">
-      <!-- Heading _____________________________________________-->
-      <h1>From the blog</h1>
-      
-      <!-- Breadcrumbs _____________________________________________-->
-      <p itemscope itemtype="http://data-vocabulary.org/Breadcrumb" id="breadcrumbs"><a href="/" rel="home" itemprop="url"><span itemprop="title">Home</span></a> <span class="divider">></span> <a href="blog.html" itemprop="url"><span itemprop="title">Blog</span></a> <span class="divider">></span> Blog Post</p>
-  </div>
-</header>
-
+<%= content_for :page_title, 'The Coder Factory Blog' %>
+<%= content_for :breadcrumb, 'Blog' %>
+<%= content_for :link, '/blog' %>
+<%= content_for :sub_breadcrumb, @post.title %>
 <div class="wrapper">
 
   <!-- MAIN CONTENT SECTION  _____________________________________________-->
@@ -19,20 +13,20 @@
       <header class="entry-header">
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
-          <%= image_tag "vladstudio_books_color3_1024x768_signed-cropped.jpg", alt: "" %>  
+          <%= image_tag @post.image, alt: @post.title %>  
         </div>  
 
         <!-- Meta info ______________________________________-->
         <div class="entry-byline">
           <ul>
               <li>
-                <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="GOOGLE+PLUS+AUTHOR_LINK" title="Darina Tyrpak">Darina Tyrpak</a></span>
+                <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= @post.user.user_profile.google_plus %>" title="<%= @post.user.name %>"><%= @post.user.name %></a></span>
               </li>
               <li>
-                <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="Sunday, January 27th, 2013, 9:44 pm">January 27, 2013</abbr>
+                <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="<%= @post.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= @post.created_at.strftime('%A, %e %B %Y') %></abbr>
               </li>
               <li>
-                <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comment on Hello world!">1 Response</a>
+                <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comment on Hello world!"><%= pluralize(@post.comments.count, "Response") %></a>
               </li>
             </ul>
         </div><!-- END .entry-byline -->
@@ -41,34 +35,25 @@
 
       <div class="entry-content">
         <!-- Heading ______________________________________-->
-        <h1>Once Upon a Time, There Was a Template...</h1>    
+        <h1><%= @post.title %></h1>    
         
         <!-- WYSIWYG Content ______________________________________-->
-        <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id ultricies ut vehicula ut id. Integer posuere erat a venenatis dapibus posuere velit aliquet duis mollis.</p>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>
-        <blockquote><p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p></blockquote>
-        <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. <a href="#">Cras mattis consectetur purus</a> sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-        <h3>Some H3 Sub-Heading</h3>
-        <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Integer posuere erat a ante venenatis</a> dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-        <h3>H3 Sub-Heading</h3>
-        <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.</p>
-        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p>
-        <ul class="tick">
-          <li>Cras mattis consectetur purus sit amet</li>
-          <li>Cras mattis consectetur purus sit amet fermentum</li>
-          <li>Donec sed odio dui</li>
-        </ul>
-        <p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.</p>
-
-        <!-- END of WYSIWYG content ______________________________________-->
-        
-        
+        <p class="lead"><%= @post.lead.html_safe %></p>
+        <%= @post.content.html_safe %>
+        <hr>
         <!-- Footer meta info ______________________________________-->
         <footer class="entry-footer">
           <div class="entry-meta">
-            <p class="left">Posted in: </p>
+            <p>Posted in: 
+              <% @post.categories.each do |category| %>
+                  <%= category.name %> 
+              <% end %>
+            </p>
+            <p>Hash tags:
             <ul class="tags">
-              <li><a href="#" rel="tag">Uncategorized</a></li> 
+              <% @post.tag_list.each do |tag| %>
+              <li><a href="#" rel="tag"><%= tag %></a></li> 
+              <% end %>
             </ul>
           </div>    
         </footer><!-- END .entry-footer -->
@@ -80,39 +65,33 @@
     <!-- Comments ______________________________________-->
     <section id="comments">
 
-      <h3 id="comments-number">One Response</h3>
+      <h3 id="comments-number"><%= pluralize(@post.comments.count, "Response") %></h3>
       <ol class="comment-list">
         
-        <li id="comment-1" class="comment even thread-even depth-1 reader has-avatar">
-          <a href="#" rel="external nofollow" title="">
-            <img alt="Mr Blog" src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=80" class="avatar avatar-80 photo avatar-defaul" height="80" width="80" />
-          </a>
-          <div class="comment-meta">
-            <span class="comment-author vcard"><cite class="fn" title=""><a href="#" title="Mr Blog" class="url" rel="external nofollow">Mr Blog</a></cite></span> 
-            <span class="published"><abbr class="comment-date" title="Sunday, January 27th, 2013, 9:44 pm">January 27, 2013</abbr> at <abbr class="comment-time" title="Sunday, January 27th, 2013, 9:44 pm">9:44 pm</abbr></span> | <a class="permalink" href="#" title="Permalink to comment 1">Permalink</a> 
-          </div> <!-- END .comment-meta -->
-          <div class="comment-content comment-text">
-            <p>Hi, this is a comment.<br />
-  To delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.</p>
-          </div><!-- END .comment-content.comment-text -->
-          <a class="comment-reply-link" href="#respond">Reply</a>
-        </li><!-- END .comment -->    
+        <% @post.comments.each do |comment| %>
+          <li id="comment-1" class="comment even thread-even depth-1 reader has-avatar">
+            <a href="#" rel="external nofollow" title="">
+                     <%= gravatar_image_tag(comment.email, :alt => comment.name, class: "avatar avatar-80 photo avatar-default", height: "80", width: "80") %>
+                     </a>
+
+
+                      <div class="comment-meta">
+                       <span class="comment-author vcard"><cite class="fn" title=""><a href="#" title="<%= comment.name %>" class="url" rel="external nofollow"><%= comment.name %></a></cite></span> 
+                       <span class="published"><abbr class="comment-date" title="<%= comment.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= comment.created_at.strftime('%A, %e %B %Y') %></abbr> at <abbr class="comment-time" title="<%= comment.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= comment.created_at.strftime('%l:%M%P') %></abbr></span> 
+                     </div> <!-- END .comment-meta -->
+
+                     <div class="comment-content comment-text">
+                       <p><%= comment.content %></p>
+                     </div><!-- END .comment-content.comment-text -->
+            
+          </li><!-- END .comment -->   
+        <% end %> 
       </ol><!-- END .comment-list -->
 
       <!-- Respond form ______________________________________-->
       <div id="respond">
         <h3 id="reply-title">Leave a Reply</h3>
-        <form action="#" method="post" id="commentform" class="form-inline" >
-          <div class="form-group"><label for="author">Name <span class="required">*</span> </label> <input type="text" class="form-control" name="author" id="author" value="" size="40" /></div>
-          <p class="form-email req"><label for="email">Email <span class="required">*</span> </label> <input type="text" class="text-input" name="email" id="email" value="" size="40" /></p>
-          <p class="form-url"><label for="url">Website</label><input type="text" class="text-input" name="url" id="url" value="" size="40" /></p>
-          <p class="form-textarea req"><label for="comment">Comment</label><textarea name="comment" id="comment" cols="60" rows="10"></textarea></p>                        
-          <p class="form-submit">
-            <input name="submit" type="submit" id="submit" value="Post Comment" />
-            <input type='hidden' name='comment_post_ID' value='1' id='comment_post_ID' />
-  <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-          </p>
-        </form>
+        <%= render 'comment_form' %>
       </div><!-- END #respond -->
           
     </section>

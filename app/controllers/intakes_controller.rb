@@ -1,6 +1,6 @@
 class IntakesController < ApplicationController
   before_action :set_intake, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /intakes
   # GET /intakes.json
   def index

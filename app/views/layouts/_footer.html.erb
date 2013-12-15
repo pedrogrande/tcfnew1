@@ -1,4 +1,4 @@
-<!-- FOOTER _____________________________________________-->
+
 <footer id="footer" role="contentinfo">
 	<div class="wrapper">
 
@@ -7,8 +7,9 @@
 			<p class="circle-icons">
 				<a href="http://www.twitter.com/DariDesignagent" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg twitter"></i></a>		
 				<a href="http://www.facebook.com/darinka.tyrpakova" target="_blank" title="Facebook"><i class="fa fa-facebook fa-lg facebook"></i></a>
-				<a href="#" target="_blank" title="Google+"><i class="fa fa-google-plus fa-lg google-plus"></i></a>	
-				<a href="#" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg linkedin"></i></a>			
+				<a href="https://plus.google.com/b/100818528139080406377/" target="_blank" title="Google+"><i class="fa fa-google-plus fa-lg google-plus"></i></a>	
+				<a href="http://www.linkedin.com/company/3290162" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg linkedin"></i></a>
+				<a href="https://github.com/TheCoderFactory" target="_blank" title="Github"><i class="fa fa-github-alt fa-lg github"></i></a>				
 			</p>
 		</div>
 	
@@ -16,26 +17,37 @@
 			<div class="footerbox">
 				<h3>About Us</h3>
 				<p>The Coder Factory helps you become a confident coder with flexible part time courses. Build fun and exciting projects that could make your dreams come true.</p>
-				<p><a href="#" class="btn btn-success btn-lg">Register now</a></p>
+			<!-- Begin MailChimp Signup Form -->
+
+
+<form action="http://thecoderfactory.us7.list-manage1.com/subscribe/post?u=1c644187b6d7e06d32bcae158&amp;id=2afdc8b0c3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<div class="form-group">
+	<label for="mce-EMAIL">Stay up to date with the latest from The Coder Factory</label>
+	<input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="email address" required></div>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_1c644187b6d7e06d32bcae158_2afdc8b0c3" value=""></div>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success"></div>
+</form>
+
+<!--End mc_embed_signup-->
 			</div>
 			<div class="footerbox">
 				<h3>Sitemap</h3>
 				<ul>
-					<li><i class="fa fa-tasks"></i>  <a href="#">Courses</a></li>
-					<li><i class="fa fa-calendar"></i> <a href="#">Calendar</a></li>
-					<li><i class="fa fa-info-circle"></i>  <a href="#">About</a></li>
-					<li><i class="fa fa-envelope"></i>  <a href="#">Contact</a></li>
-					<li><i class="fa fa-book"></i> <a href="#">Blog</a></li>
+					<li><i class="fa fa-tasks"></i>  <a href="/web-development-and-javascript-courses">Courses</a></li>
+					<!-- <li><i class="fa fa-calendar"></i> <a href="#">Calendar</a></li> -->
+					<li><i class="fa fa-info-circle"></i>  <%= link_to "About", about_path %></li>
+					<li><i class="fa fa-envelope"></i>  <%= link_to "Contact", contact_path %></li>
+					<li><i class="fa fa-book"></i> <%= link_to "Blog", blog_path %></li>
 				</ul>
 			</div>
 			<div class="footerbox">
 				<h3>Links</h3>
 				<ul>
-					<li><a href="#">Ohio</a></li>
-					<li><a href="#">Ninefold</a></li>
-					<li><a href="#">Ruby on Rails</a></li>
-					<li><a href="#">Angular.js</a></li>
-					<li><a href="#">Bootstrap</a></li>
+					<li><a href="http://thestartupcommunity.com/" target="_blank">The Startup Community</a></li>
+					<li><a href="http://ninefold.com/" target="_blank">Ninefold</a></li>
+					<li><a href="http://www.meetup.com/Sydney-on-Rails/" target="_blank">Sydney on Rails</a></li>
+					<li><a href="http://www.meetup.com/AngularJS-Sydney/" target="_blank">AngularJS Sydney</a></li>
 				</ul>
 			</div>
 			<div class="footerbox last">
@@ -47,7 +59,7 @@
 
 
 				<ul class="contact-info">
-					<li><i class="fa fa-phone" title="Phone"></i>   +61 402 180 512</li>
+					<li><i class="fa fa-phone" title="Phone"></i>   <a href="+61402180512">+61 402 180 512</a></li>
 					<li><i class="fa fa-envelope" title="Email"></i> info@thecoderfactory.com</li>
 					<li><i class="fa fa-desktop" title="Web"></i>   thecoderfactory.com</li>
 				</ul>
@@ -62,4 +74,4 @@
 
 	</div> <!-- END .wrapper FOR footer -->
 </footer>
-<!-- END footer -->
+<!-- END footer

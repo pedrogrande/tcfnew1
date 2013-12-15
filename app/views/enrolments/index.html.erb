@@ -1,0 +1,33 @@
+<h1>Listing enrolments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Referrer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrolments.each do |enrolment| %>
+      <tr>
+        <td><%= enrolment.name %></td>
+        <td><%= enrolment.email %></td>
+        <td><%= enrolment.phone %></td>
+        <td><%= enrolment.referrer %></td>
+        <td><%= link_to 'Show', enrolment %></td>
+        <td><%= link_to 'Edit', edit_enrolment_path(enrolment) %></td>
+        <td><%= link_to 'Destroy', enrolment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enrolment', new_enrolment_path %>
