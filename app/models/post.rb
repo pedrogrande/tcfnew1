@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 	mount_uploader :image, PostImageUploader
 	acts_as_taggable
 
-	validates :title, :lead, :image, :content, presence: true
+	validates :title, :lead, :content, presence: true
 	default_scope order: 'posts.created_at DESC' 
 
 	def self.published
