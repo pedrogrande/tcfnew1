@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215125852) do
+ActiveRecord::Schema.define(version: 20131216040449) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20131215125852) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "course_programme_requests", force: true do |t|
+    t.integer  "programme_request_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_programme_requests", ["course_id"], name: "index_course_programme_requests_on_course_id"
+  add_index "course_programme_requests", ["programme_request_id"], name: "index_course_programme_requests_on_programme_request_id"
 
   create_table "course_skills", force: true do |t|
     t.integer  "course_id"
@@ -163,6 +173,14 @@ ActiveRecord::Schema.define(version: 20131215125852) do
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "programme_requests", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "follow_up"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

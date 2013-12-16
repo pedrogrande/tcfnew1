@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @programme_request.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @programme_request.email %>
+</p>
+
+<p>
+  <strong>Follow up:</strong>
+  <%= @programme_request.follow_up %>
+</p>
+
+<%= link_to 'Edit', edit_programme_request_path(@programme_request) %> |
+<%= link_to 'Back', programme_requests_path %>

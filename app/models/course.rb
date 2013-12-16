@@ -2,6 +2,8 @@ class Course < ActiveRecord::Base
 	has_many :intakes
 	has_many :course_skills
 	has_many :skills, through: :course_skills
+    has_many :course_programme_requests
+    has_many :programme_requests, through: :course_programme_requests
 	extend FriendlyId
     friendly_id :title, use: :slugged
     default_scope order: 'courses.priority ASC'

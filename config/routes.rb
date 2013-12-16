@@ -1,4 +1,6 @@
 Tcfnew1::Application.routes.draw do
+  resources :programme_requests
+
   resources :user_profiles
 
   resources :comments
