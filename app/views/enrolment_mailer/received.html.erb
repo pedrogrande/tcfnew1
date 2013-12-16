@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Enrolment received</h1>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @enrolment.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @enrolment.email %></td>
+      </tr>
+      <tr>
+        <th>Link to enrolment</th>
+        <td><%= link_to 'Enrolment', enrolment_url(@enrolment) %></td>
+      </tr>
+      <tr>
+        <th><br>Courses:</th>
+        <td><ul><% @enrolment.courses.each do |course| %><li><%= course.title %></li> <% end %></ul></td>
+      </tr>
+    </table>
+  </body>
+</html>

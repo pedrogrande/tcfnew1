@@ -1,6 +1,6 @@
 class EnrolmentsController < ApplicationController
   before_action :set_enrolment, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:new, :create]
   # GET /enrolments
   # GET /enrolments.json
   def index
@@ -28,7 +28,9 @@ class EnrolmentsController < ApplicationController
 
     respond_to do |format|
       if @enrolment.save
-        format.html { redirect_to @enrolment, notice: 'Enrolment was successfully created.' }
+        EnrolmentMailer.response(@enrolment).deliver
+        EnrolmentMailer.received(@enrolment).deliver
+        format.html { redirect_to enrolment_thanks_path, notice: 'You are now enrolled in The Coder Factory!' }
         format.json { render action: 'show', status: :created, location: @enrolment }
       else
         format.html { render action: 'new' }
@@ -69,6 +71,6 @@ class EnrolmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrolment_params
-      params.require(:enrolment).permit(:name, :email, :phone, :linkedin, :github, :about, :study, :career, :reason, :goals, :follow_up)
+      params.require(:enrolment).permit(:name, :email, :phone, :linkedin, :github, :about, :study, :career, :reason, :goals, :follow_up, :course_ids => [])
     end
 end

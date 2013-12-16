@@ -1,6 +1,6 @@
 class ProgrammeRequestsController < ApplicationController
   before_action :set_programme_request, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:new, :create]
   # GET /programme_requests
   # GET /programme_requests.json
   def index

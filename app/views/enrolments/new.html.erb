@@ -1,10 +1,13 @@
+<%= content_for :page_title, 'Enrol in The Coder Factory' %>
+<%= content_for :breadcrumb, 'Enrol in The Coder Factory' %>
+
 <div class="panel panel-info">
 	<div class="panel-heading">
-		<h4 class="panel-title">Enrol in The Coder Factory</h4>
+		<h4 class="panel-title"><i class="fa fa-smile-o"></i> Thanks for choosing to study at The Coder Factory! </h4>
 	</div>
 	<div class="panel-body">
-	<p class="lead">Thanks for choosing to study at The Coder Factory! <i class="fa fa-smile-o"></i></p>
-	<p>Please let us get to know more about you and your goals. We are a friendly bunch here and already looking forward to meeting you.</p>
+	
+	<p>Please allow us to get to know you better.<br>We are a friendly bunch here and already looking forward to meeting you.</p>
 	<div class="well">
 		<%= simple_form_for(@enrolment) do |f| %>
 		  <%= f.error_notification %>
