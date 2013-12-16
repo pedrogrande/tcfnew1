@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Programme Outline Request received</h1>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @programme_request.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @programme_request.email %></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td></td>
+      </tr>
+      <tr>
+        <th><br>Courses:</th>
+        <td><ul><% @programme_request.courses.each do |course| %><li><%= course.title %></li> <% end %></ul></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 class EnrolmentsController < ApplicationController
   before_action :set_enrolment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:new, :create]
+
   # GET /enrolments
   # GET /enrolments.json
   def index
@@ -69,6 +69,6 @@ class EnrolmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrolment_params
-      params.require(:enrolment).permit(:name, :email, :phone, :referrer)
+      params.require(:enrolment).permit(:name, :email, :phone, :linkedin, :github, :about, :study, :career, :reason, :goals, :follow_up)
     end
 end

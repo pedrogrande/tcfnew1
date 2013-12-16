@@ -1,0 +1,38 @@
+
+<div class="row">
+<div class="col-md-9">
+<div class="panel panel-info">
+<div class="panel-heading">
+
+<h4 class="panel-title">Thanks</h4>
+</div>
+<div class="panel-body">
+<p class="lead">We are grateful you are considering The Coder Factory to help you become a confident coder.</p>
+
+<p>Please take a moment and share our courses with your friends.</p>
+
+<div class="share">
+<a href="https://twitter.com/share?url=http://thecoderfactory.com&via=coderfactory&text=Learn to code" target="_blank" title="Twitter" class="btn btn-lg twitter"><i class="fa fa-twitter fa-fw"></i> Tweet </a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://thecoderfactory.com" target="_blank" title="Facebook" class="btn btn-lg facebook"><i class="fa fa-facebook fa-fw"></i> Share </a>
+<a href="https://plus.google.com/share?url=http://thecoderfactory.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" title="Google+" class="btn btn-lg google-plus"><i class="fa fa-google-plus fa-fw"></i> Circle </a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&url=http://thecoderfactory.com&source=The Coder Factory" target="_blank" title="LinkedIn" class="btn btn-lg linkedin"><i class="fa fa-linkedin fa-fw"></i> Link up</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+	
+			<h3>Downloads</h3>
+		
+			
+				<% @courses.each do |course| %>
+					<p><%= link_to course.programme.url do %>
+						<i class="fa fa-download"></i> 
+						<%= course.title %>
+					<% end %>
+</p>
+				<% end %>
+			
+</div>
+</div>
+</div>

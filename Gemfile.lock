@@ -93,9 +93,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mailchimp-api (2.0.4)
-      excon (>= 0.16.0)
-      json (>= 1.7.7)
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
@@ -106,6 +103,8 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    parsley-rails (1.2.2.0)
+      railties (>= 3.0.0)
     pg (0.17.0)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -197,7 +196,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
-  mailchimp-api (~> 2.0.4)
+  parsley-rails
   pg
   quiet_assets
   rails (= 4.0.1)

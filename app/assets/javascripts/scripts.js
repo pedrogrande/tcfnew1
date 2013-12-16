@@ -2,31 +2,17 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function() {	
 		
-	// color schemes
-	$('ul#change-style a').click(function(event) {	
-		event.preventDefault();
-		var appendcss = "colors-" + $(this).attr('id');
-		$('head').append('<link rel="stylesheet" href="css/' + appendcss + '.css" type="text/css" />');
-	});
-
 	$('#map-content').gMap({
-		address: "corner daniels st and pine street, chippenale, NSW Australia",
-		scrollwheel: false,
-		zoom: 15,
-		markers:[
-			{
-				address: "corner daniels st and pine street, chippenale, NSW Australia"
-			}
-		]
-	});
-	$('.modal').bind('hide', function () {
-		var iframe = $(this).children('div.modal-body').find('iframe'); 
-		var src = iframe.attr('src');
-		iframe.attr('src', '');
-		iframe.attr('src', src);
-	});
+			address: "corner daniels st and pine street, chippenale, NSW Australia",
+			scrollwheel: false,
+			zoom: 15,
+			markers:[
+				{
+					address: "corner daniels st and pine street, chippenale, NSW Australia"
+				}
+			]
+		});
 
-	
 	//  dropdownmenu
 	$('.children, .sub-menu').hide();
 	$('nav ul li:has(ul)').mouseenter(function() {

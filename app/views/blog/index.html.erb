@@ -1,30 +1,8 @@
 <%= content_for :page_title, 'The Coder Factory Blog' %>
 <%= content_for :breadcrumb, 'Blog' %>
-	
-</header>
-<div class="wrapper">
 <% if params[:tag] %>
-<h2>Posts tagged with: <em><%= @tag %></em></h2>
+	<h2>Posts tagged with: <em><%= @tag %></em></h2>
 <% elsif params[:category] %>
-<h2><%= @category.name %> Posts</h2>
+	<h2><%= @category.name %> Posts</h2>
 <% end %>
-	<!-- MAIN CONTENT SECTION  _____________________________________________-->
-	<section id="content" role="main">
-	
-		<!-- BLOG content  _____________________________________________-->
-			<!-- Standard post excerpt _______________________________________________-->
-			<%= render @posts %>
-			
-			<!-- Pagination _______________________________________________
-			<div class="pagination loop-pagination">
-				<span class="page-numbers current">1</span>
-				<a class="page-numbers" href="#">2</a>
-				<a class="page-numbers" href="#">3</a>
-				<a class="next page-numbers" href="#">Next <span class="meta-nav">&rarr;</span></a>
-				<%= will_paginate @posts %>
-			</div> <!-- END .pagination -->
-			
-		</section>
-		<!-- END #content --> 
-		
-
+<%= render @posts %>

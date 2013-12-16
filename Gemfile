@@ -22,7 +22,7 @@ gem 'gravatar_image_tag'
 gem 'acts-as-taggable-on'
 gem 'will_paginate', '~> 3.0'
 gem 'seed_dump'
-gem "mailchimp-api", "~> 2.0.4"
+gem "parsley-rails"
 group :development do
   gem 'better_errors'
   gem 'sqlite3'

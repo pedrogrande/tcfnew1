@@ -28,7 +28,9 @@ class ProgrammeRequestsController < ApplicationController
 
     respond_to do |format|
       if @programme_request.save
-        format.html { redirect_to @programme_request, notice: 'Programme request was successfully created.' }
+        DownloadProgramme.response(@programme_request).deliver
+        DownloadProgramme.received(@programme_request).deliver
+        format.html { redirect_to thanks_path, notice: 'Your programme outlines are on their way to you now.' }
         format.json { render action: 'show', status: :created, location: @programme_request }
       else
         format.html { render action: 'new' }
@@ -69,6 +71,6 @@ class ProgrammeRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def programme_request_params
-      params.require(:programme_request).permit(:name, :email, :follow_up)
+      params.require(:programme_request).permit(:name, :email, :follow_up, :course_ids => [])
     end
 end

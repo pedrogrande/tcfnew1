@@ -8,7 +8,7 @@ class DownloadProgramme < ActionMailer::Base
   #
   def response(programme_request)
     @programme_request = programme_request
-    mail(to: "@programme_request.email", subject: "Programme information from The Coder Factory")
+    mail(to: @programme_request.email, subject: "Programme information from The Coder Factory")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

@@ -1,4 +1,6 @@
 Tcfnew1::Application.routes.draw do
+  resources :enrolments
+
   resources :programme_requests
 
   resources :user_profiles
@@ -16,13 +18,11 @@ Tcfnew1::Application.routes.draw do
   resources :posts
   resources :events
   resources :enquiries
-  resources :enrolments
-
   get "calendar" => "calendar#index"
   get "privacy" => "privacy#index"
   get "blog" => "blog#index"
   get "contact" => "contact#index"
   get "about" => "about#index"
   get "web-development-and-javascript-courses" => "course_list#index"
-  post 'mcsubscribe/subscribe' => 'mcsubscribe#subscribe'
+  get "thanks" => "thanks#index"
 end

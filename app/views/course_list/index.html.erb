@@ -11,9 +11,17 @@
 		<div class="col-md-6">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<h2 class="panel-title"><%= link_to course.title, course %><br><small><%= course.duration %> | AUD <%= course.price %></small></h2>
+					<h2 class="panel-title">
+						<%= link_to course.title, course %>
+
+						<br>
+						<small>
+						Next class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
+						</small>
+					</h2>
 				</div>
 				<div class="panel-body">
+					
 					<h3><%= course.lead %></h3>
 					<p><%= course.intro %></p>
 					<%= link_to 'Find out more', course, class: 'btn btn-info btn-lg' %>

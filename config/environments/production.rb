@@ -71,15 +71,15 @@ Tcfnew1::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
+  config.action_mailer.default_url_options = { :host => 'thecoderfactory.com' }
   config.action_mailer.smtp_settings = {
     address: "smtp.mandrillapp.com",
     port: 587,
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["MANDRILL_USERNAME"],
+    password: ENV["MANDRILL_PASSWORD"]
   }
 
 

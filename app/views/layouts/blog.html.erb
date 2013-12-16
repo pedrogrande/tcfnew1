@@ -12,15 +12,55 @@
   <header role="banner" id="header">
     <%= render 'layouts/header' %>
   </header>
-    <%= render 'layouts/page_title' %>
-    <div class="wrapper">
-      <section id="content" class="full-width" role="main">
-          <%= render 'layouts/messages' %>
-          <%= yield %>
-          <%= render 'layouts/sidebar' %>
-      </section><!-- END #content -->
-    </div> <!-- END .wrapper -->
-    <%= render 'layouts/back_to_top' %>
-    <%= render 'layouts/footer' %>
+
+<%= render 'layouts/page_title' %>
+
+<div class="wrapper">
+
+  <!-- MAIN CONTENT SECTION  _____________________________________________-->
+  <section id="content" role="main">
+  
+    <!-- BLOG content  _____________________________________________-->
+      <!-- Standard post excerpt _______________________________________________-->
+      <%= yield %>
+      
+      
+      
+    </section>
+    <!-- END #content --> 
+    
+
+    <!-- Sidebar _______________________________________________-->
+    
+
+  <%= render 'layouts/sidebar' %>
+
+</div> <!-- END .wrapper -->
+  
+
+<%= render 'layouts/back_to_top' %>
+
+
+<!-- FOOTER _____________________________________________-->
+<%= render 'layouts/footer' %>
+<!-- END footer -->
+
+
+<!-- Custom Page Scripts _____________________________________________-->
+<script>    
+jQuery(document).ready(function() {
+  // init Cycle for images
+  $('.post-thumb .cycle').cycle({
+    fx:      'fade', 
+    speed:    300, 
+    timeout:  4000,
+    cleartype:  true,
+    slideResize: true,
+    fit: 1,
+    width: '100%'
+  });
+});
+</script>
+
   </body>
 </html>

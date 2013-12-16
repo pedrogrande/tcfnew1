@@ -1,52 +1,51 @@
-<article id="post-1" class="post format-standard sticky">
-
-				<header class="entry-header">
-					<!-- Post Featured Image _______________________________________________-->
-					<div class="post-thumb">
-						<%= image_tag post.image, alt: post.title %>	
-					</div>
+<article id="post" class="post format-standard sticky">
+  <header class="entry-header">
+		<!-- Post Featured Image _______________________________________________-->
+		<div class="post-thumb">
+			<%= image_tag post.image, alt: post.title %>	
+		</div>
 								
 					<!-- Meta info _______________________________________________-->
-					<div class="entry-byline">
-          <ul>
-              <li>
-                <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= post.user.user_profile.google_plus %>" target="_blank" title="<%= post.user.name %>"><%= post.user.name %></a></span>
-              </li>
-              <li>
-                <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="<%= post.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= post.created_at.strftime('%A, %e %B %Y') %></abbr>
-              </li>
-              <li>
-                <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comment on Hello world!">1 Response</a>
-              </li>
-            </ul>
-        </div><!-- END .entry-byline -->
+		<div class="entry-byline">
+      <ul>
+        <li>
+          <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= post.user.user_profile.google_plus %>" target="_blank" title="<%= post.user.name %>"><%= post.user.name %></a></span>
+        </li>
+        <li>
+          <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="<%= post.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= post.created_at.strftime('%A, %e %B %Y') %></abbr>
+        </li>
+        <li>
+          <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comments"><%= pluralize(post.comments.count, "Response") %></a>
+        </li>
+      </ul>
+    </div><!-- END .entry-byline -->
 				
-				</header> <!-- END .entry-header -->
-
-				<div class="entry-summary">
-					<!-- Heading _______________________________________________-->
-					<h1><%= link_to post.title, post %></h1>    
-					
-					<!-- WYSIWYG Content ______________________________________-->
-					<p class="lead"><%= post.lead.html_safe %></p>
-					<%= truncate_html(post.content.html_safe, length: 200) %> <%= link_to 'Read more', post, class: 'btn btn-info pull-right' %>
-					<br><br><hr>
-					<!-- Footer meta info _______________________________________________-->
-					<footer class="entry-footer">
-          <div class="entry-meta">
-            <p>Posted in: 
-              <% post.categories.each do |category| %>
-                  <%= link_to category.name, blog_path(:category => category) %> 
-              <% end %>
-            </p>
-            <p>Hash tags:
-            <ul class="tags">
-              <% post.tags.each do |tag| %>
+	</header> <!-- END .entry-header -->
+  <div class="entry-summary">
+		<!-- Heading _______________________________________________-->
+		<h1><%= link_to post.title, post %></h1>    
+		
+		<!-- WYSIWYG Content ______________________________________-->
+		<p class="lead"><%= post.lead.html_safe %></p>
+		<%= truncate_html(post.content.html_safe, length: 200) %> <%= link_to 'Read more', post, class: 'btn btn-info pull-right' %>
+		<br><br><hr>
+		<!-- Footer meta info _______________________________________________-->
+		<footer class="entry-footer">
+      <div class="entry-meta">
+        <p>Posted in: 
+          <% post.categories.each do |category| %>
+              <%= link_to category.name, blog_path(:category => category) %> 
+          <% end %>
+        </p>
+        <p>Hash tags:</p>
+          <ul class="tags">
+            <% post.tags.each do |tag| %>
               <li><%= link_to tag, blog_path(:tag => tag), rel: 'tag' %></a></li> 
-              <% end %>
-            </ul>
-          </div>    
-        </footer><!-- END .entry-footer -->
-				</div><!-- END .entry-summary -->
-				<div class="clear"></div>
-			</article>
+            <% end %>
+          </ul>
+        
+      </div>  
+    </footer><!-- END .entry-footer -->
+	</div><!-- END .entry-summary -->
+	<div class="clear"></div>
+</article>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class McsubscribeControllerTest < ActionController::TestCase
+class CourseEnrolmentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

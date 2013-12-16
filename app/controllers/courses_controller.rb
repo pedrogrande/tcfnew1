@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
   def show
     @intake = @course.next_intake.first
     @courses = Course.all
+    @programme_request = ProgrammeRequest.new
   end
 
   # GET /courses/new
@@ -72,6 +73,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:title, :lead, :intro, :description, :designed_for, :price, :duration, :priority, :active)
+      params.require(:course).permit(:programme, :title, :lead, :intro, :description, :designed_for, :price, :duration, :priority, :active)
     end
 end

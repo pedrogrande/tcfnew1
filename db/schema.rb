@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216040449) do
+ActiveRecord::Schema.define(version: 20131216112122) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20131216040449) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "course_enrolments", force: true do |t|
+    t.integer  "course_id"
+    t.integer  "enrolment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_enrolments", ["course_id"], name: "index_course_enrolments_on_course_id"
+  add_index "course_enrolments", ["enrolment_id"], name: "index_course_enrolments_on_enrolment_id"
 
   create_table "course_programme_requests", force: true do |t|
     t.integer  "programme_request_id"
@@ -72,6 +82,7 @@ ActiveRecord::Schema.define(version: 20131216040449) do
     t.boolean  "active"
     t.integer  "priority"
     t.string   "slug"
+    t.string   "programme"
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true
@@ -89,7 +100,14 @@ ActiveRecord::Schema.define(version: 20131216040449) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.string   "referrer"
+    t.string   "linkedin"
+    t.string   "github"
+    t.text     "about"
+    t.text     "study"
+    t.text     "career"
+    t.text     "reason"
+    t.text     "goals"
+    t.boolean  "follow_up"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

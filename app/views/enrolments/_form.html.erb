@@ -1,14 +1,38 @@
 <%= simple_form_for(@enrolment) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.input :referrer %>
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <%= f.input :email, input_html: { class: 'form-control'} %>
   </div>
+  <div class="form-group">
+    <%= f.input :phone, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :linkedin, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :github, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :about, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :study, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :career, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :reason, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :goals, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.association :courses, as: :check_boxes %>
+  </div>
+  <%= f.button :submit %>
+  
 <% end %>

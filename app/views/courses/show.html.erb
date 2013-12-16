@@ -2,12 +2,20 @@
 <%= content_for :breadcrumb, 'Courses' %>
 <%= content_for :link, '/web-development-and-javascript-courses' %>
 <%= content_for :sub_breadcrumb, @course.title %>
-
 <div class="row">
 <div class="col-md-8">
 <div class="panel panel-info">
 				<div class="panel-heading">
-					<h2 class="panel-title"><%= link_to @course.title, @course %><span class="pull-right"><a href="#" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> Download programme</a></span><br><small><%= @course.duration %> | AUD <%= @course.price %></small></h2>
+					<h2 class="panel-title"><%= link_to @course.title, @course %>
+
+					<span class="pull-right">
+						<%= link_to new_programme_request_path(:course => @course), class: "btn btn-primary btn-sm" do %>
+							<i class="fa fa-download"></i> Download programme
+						<% end %>
+					</span>
+
+
+					<br><small><%= @course.duration %> | AUD <%= @course.price %></small></h2>
 				</div>
 				<div class="panel-body">
 <h3><%= @course.lead %></h3>

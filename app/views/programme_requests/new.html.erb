@@ -1,5 +1,39 @@
-<h1>New programme_request</h1>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h4 class="panel-title">Download Programme Information</h4>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-4">
+			<%= image_tag 'Info_preview.png', class: 'img-responsive img-thumbnail' %>
+			</div>
+		<%= simple_form_for(@programme_request) do |f| %>
+		  
+		  <div class="col-md-6">
+		  <p>Select which courses you are interested in and you'll receive an email with the download links almost immediately!
+			  </p>
+		  <div class="well">
+		  		<%= f.error_notification %>
+			   <%= f.association :courses, as: :check_boxes, label: false %>
+			  
+		 
 
-<%= render 'form' %>
+			  <div class="form-group">
+			    <%= f.input :name, input_html: { class: 'form-control'}, placeholder: 'Your name', label: false %>
+			  </div>
+			  <div class="form-group">
+			    <%= f.input :email, input_html: { class: 'form-control'}, placeholder: 'Your email', label: false %>
+			  </div>
+			  <%= button_tag(type: "submit", class: 'btn btn-success btn-lg') do %><i class="fa fa-download"></i> Download now<% end %> <%= link_to 'Cancel', courses_path, class: 'btn btn-default' %>
+			  
+			   
+		  </div>
 
-<%= link_to 'Back', programme_requests_path %>
+		  </div>
+		<% end %>
+			
+		</div>
+
+		
+	</div>
+</div>
