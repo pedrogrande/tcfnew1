@@ -24,6 +24,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'seed_dump'
 gem "parsley-rails"
 gem 'sitemap_generator'
+gem 'whenever', :require => false
 group :development do
   gem 'better_errors'
   gem 'sqlite3'
