@@ -44,6 +44,8 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    @course.slug = nil
+
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
@@ -73,6 +75,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:programme, :title, :lead, :intro, :description, :designed_for, :price, :duration, :priority, :active)
+      params.require(:course).permit(:slug, :programme, :title, :lead, :intro, :description, :designed_for, :price, :duration, :priority, :active)
     end
 end
