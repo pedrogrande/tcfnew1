@@ -210,7 +210,7 @@
 					</header><!-- .entry-header -->
 
 					<div class="post-featured-image">
-						<%= link_to @post do %><%= image_tag "blog_image.png", alt: "" %><% end %>
+						<%= link_to @post do %><%= image_tag @post.image, alt: "" %><% end %>
 					</div>
 					
 					<div class="entry-content">
