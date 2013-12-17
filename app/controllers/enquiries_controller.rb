@@ -29,7 +29,9 @@ class EnquiriesController < ApplicationController
 
     respond_to do |format|
       if @enquiry.save
-        format.html { redirect_to @enquiry, notice: 'Enquiry was successfully created.' }
+        EnquiryForm.response(@enquiry).deliver
+        EnquiryForm.received(@enquiry).deliver
+        format.html { redirect_to :back, notice: "Thanks for getting in touch. We'll contact you shortly." }
         format.json { render action: 'show', status: :created, location: @enquiry }
       else
         format.html { render action: 'new' }
