@@ -4,7 +4,7 @@
 <%= content_for :sub_breadcrumb, @course.title %>
 <div class="row">
 <div class="col-md-8">
-<div class="panel panel-info">
+<div class="panel panel-success">
 				<div class="panel-heading">
 					<h2 class="panel-title"><%= link_to @course.title, @course %>
 
@@ -33,7 +33,7 @@
 <li><%= @intake.class_days %></li>
 <li><%= @intake.start_time.strftime('%l:%M%P') %> - <%= @intake.finish_time.strftime('%l:%M%P') %></li>
 </ul>
-<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Reserve your place<% end %>
+<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Reserve your place. Enrol now.<% end %>
 </div>
 </div>
 </div>

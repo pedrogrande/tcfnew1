@@ -1,6 +1,6 @@
 Tcfnew1::Application.routes.draw do
   root :to => "home#index"
-    get "/courses/web-app-coder-ruby-on-rails", to: redirect('/courses/expert-coder')
+  get "/courses/web-app-coder-ruby-on-rails", to: redirect('/courses/expert-coder')
   get "/courses/web-app-coder-angular-and-node", to: redirect('/courses/angular-coder')
   get "/ruby_on_rails_course_scholarship", to: redirect('/')
   get "/courses/summer-coder-camp-ruby-on-rails", to: redirect('/courses/summer-coder-camp-rails-angularjs')

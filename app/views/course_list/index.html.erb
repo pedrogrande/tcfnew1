@@ -9,22 +9,22 @@
 			</div><div class="row">
 		<% end %>
 		<div class="col-md-6">
-			<div class="panel panel-info">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h2 class="panel-title">
-						<%= link_to course.title, course %>
-
+						<%= link_to course.title, course %> 
+						<small></small>
 						<br>
-						<small>
-						Next class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
-						</small>
+						<span class="start-date">
+						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
+						</span>
 					</h2>
 				</div>
 				<div class="panel-body">
 					
 					<h3><%= course.lead %></h3>
 					<p><%= course.intro %></p>
-					<%= link_to 'Find out more', course, class: 'btn btn-info btn-lg' %>
+					<%= link_to course, class: 'btn btn-success btn-lg' do %><i class="fa fa-chevron-circle-right"></i> Find out more<% end %>
 				</div>
 			</div>
 		</div>
