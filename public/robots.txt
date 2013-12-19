@@ -1,6 +1,18 @@
 # See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
 #
 # To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
+User-agent: *
+Disallow: /enrolment_thanks
+Disallow: /thanks
+Disallow: /skills/*
+Disallow: /user_profiles/*
+Disallow: /users
+Disallow: /categories
+Disallow: /categories/*
+Disallow: /courses
+Disallow: /enquiries
+Disallow: /comments
+Disallow: /enrolments
+Disallow: /events
 Sitemap: http://www.example.com/sitemap.xml.gz
+Host: thecoderfactory.com

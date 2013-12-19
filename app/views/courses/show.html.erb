@@ -2,6 +2,8 @@
 <%= content_for :breadcrumb, 'Courses' %>
 <%= content_for :link, '/web-development-and-javascript-courses' %>
 <%= content_for :sub_breadcrumb, @course.title %>
+<%= content_for :title, @course.title + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
+<%= content_for :description, @course.title + ': ' + @course.lead + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
 <div class="panel panel-success">
@@ -15,7 +17,11 @@
 					</span>
 
 
-					<br><small><%= @course.duration %> | AUD <%= @course.price %></small></h2>
+					<br>
+					<span class="start-date">
+						<i class="fa fa-check-circle"></i> <%= @course.duration %> <i class="fa fa-check-circle"></i> AUD <%= @course.price %> <i class="fa fa-check-circle"></i>  Class starts: <%= @course.intakes.first.start_date.strftime('%e %h %Y') %>
+						</span>
+						</h2>
 				</div>
 				<div class="panel-body">
 <h3><%= @course.lead %></h3>
@@ -51,7 +57,11 @@
 	<% if course != @course %>
 		 	<h4 class="accordion-title"><a href="#"><%= course.title %></a></h4>
 		 	<div>
-		 		<p><span class="grey"><%= course.duration %> | AUD <%= course.price %></span><br><%= course.lead %></p>
+		 		<p><span class="start-date">
+						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
+						</span>
+
+		 		<br><%= course.lead %></p>
 		 		<p><%= link_to "More info", course, class: 'btn btn-info btn-xs' %></p>
 		 	</div>
 		 

@@ -1,7 +1,9 @@
-<%= content_for :page_title, 'The Coder Factory Blog' %>
+<%= content_for :page_title, "The Coder Factory Blog" %>
 <%= content_for :breadcrumb, 'Blog' %>
 <%= content_for :link, '/blog' %>
 <%= content_for :sub_breadcrumb, @post.title %>
+<%= content_for :title, @post.title %>
+<%= content_for :description, @post.title + ' - ' + @post.lead %>
 <div class="wrapper">
 
   <!-- MAIN CONTENT SECTION  _____________________________________________-->
