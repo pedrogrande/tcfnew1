@@ -13,6 +13,7 @@
     <article id="post-1" class="post">
 
       <header class="entry-header">
+      <h1><%= @post.title %></h1> 
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
           <%= image_tag @post.image, alt: @post.title %>  
@@ -37,7 +38,7 @@
 
       <div class="entry-content">
         <!-- Heading ______________________________________-->
-        <h1><%= @post.title %></h1>    
+           
         
         <!-- WYSIWYG Content ______________________________________-->
         <p class="lead"><%= @post.lead.html_safe %></p>
