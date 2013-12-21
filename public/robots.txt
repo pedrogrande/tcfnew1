@@ -6,13 +6,9 @@ Disallow: /enrolment_thanks
 Disallow: /thanks
 Disallow: /skills/*
 Disallow: /user_profiles/*
-Disallow: /users
 Disallow: /categories
 Disallow: /categories/*
-Disallow: /courses
 Disallow: /enquiries
 Disallow: /comments
-Disallow: /enrolments
-Disallow: /events
 Sitemap: http://www.example.com/sitemap.xml.gz
 Host: thecoderfactory.com
