@@ -8,52 +8,37 @@
 <div class="col-md-8">
 <div class="panel panel-default">
 	<div class="panel-heading">
+				<h2 class="panel-title"><%= link_to @course.title, @course %> <small><%= @course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= @course.price %></small></h2>
+	</div>
+	<div class="panel-body">
 		<div class="row">
-			<div class="col-md-12">
-				<h2 class="panel-title"><%= link_to @course.title, @course %></h2>
+			<div class="col-md-9">
+				<h3><%= @course.lead %></h3>
+				<p class="lead"><%= @course.intro %></p>
+				<%= link_to @course.programme.url, class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+				<br>
+			</div>
+			<div class="col-md-3">
+				<%= image_tag @course.image, class: 'img-responsive' %>
 			</div>
 		</div>
-
-
-		<div class="row start-date">
-			<div class="col-md-3">
-				<i class="fa fa-check-circle"></i> <%= @course.duration %> 
+		<div class="row">
+			<div class="col-md-6">
+				<p class="sub-heading-upper">What you'll learn</p>
+				<%= @course.description.html_safe %>
 			</div>
-			<div class="col-md-3">
-				<i class="fa fa-check-circle"></i> AUD <%= @course.price %> 
+			<div class="col-md-6">
+				<p class="sub-heading-upper">Next class starts soon</p>
+				<ul class="star">
+					<li>Start date: <span class="start-date"><%= @intake.start_date.strftime('%A, %e %h %Y') %></span></li>
+					<li>Location: <%= @intake.location %></li>
+					<li><%= @intake.class_days %></li>
+					<li><%= @intake.start_time.strftime('%l:%M%P') %> - <%= @intake.finish_time.strftime('%l:%M%P') %></li>
+				</ul>
+				<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Reserve your place. Enrol now.<% end %>
 			</div>
-			<div class="col-md-5">
-				<i class="fa fa-check-circle"></i>  Class starts: <%= @course.intakes.first.start_date.strftime('%e %h %Y') %>
-			</div>
-			
 		</div>
 	</div>
-<div class="panel-body">
-<div class="row">
-
-<div class="col-md-9">
-<h3><%= @course.lead %></h3>
-<p class="lead"><%= @course.intro %></p>
-</div><div class="col-md-3">
-<%= image_tag @course.image, class: 'img-responsive' %>
-</div></div>
-<div class="row">
-<div class="col-md-6">
-<p class="sub-heading-upper">What you'll learn</p>
-<%= @course.description.html_safe %>
-</div>
-<div class="col-md-6">
-<p class="sub-heading-upper">Next class starts soon</p>
-<ul class="star">
-<li>Start date: <%= @intake.start_date.strftime('%e %h %Y') %></li>
-<li>Location: <%= @intake.location %></li>
-<li><%= @intake.class_days %></li>
-<li><%= @intake.start_time.strftime('%l:%M%P') %> - <%= @intake.finish_time.strftime('%l:%M%P') %></li>
-</ul>
-<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Reserve your place. Enrol now.<% end %>
-</div>
-</div>
-</div>
 </div>
 <% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>

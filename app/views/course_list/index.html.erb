@@ -14,18 +14,26 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
-						<%= link_to course.title, course %> 
-						<br>
-						<small><span class="start-date">
-						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
-						</span></small>
+						<%= link_to course.title, course %> <small><%= course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= course.price %></small>
+						
 					</h2>
 				</div>
 				<div class="panel-body">
-					<%= image_tag course.image, class: 'img-responsive pull-left' %>
-					<h3><%= course.lead %></h3>
-					<p><%= course.intro %></p>
-					<%= link_to course, class: 'btn btn-success btn-lg' do %><i class="fa fa-chevron-circle-right"></i> Find out more<% end %>
+					<div class="row">
+						<div class="col-md-3">
+							<%= image_tag course.image, class: 'img-responsive' %>
+						</div>
+					
+						<div class="col-md-9">
+							
+							<h3><%= course.lead %></h3>
+							<p><%= course.intro %></p>
+							<p>
+							 Next class starts: <span class="start-date"><%= course.intakes.first.start_date.strftime('%A, %e %h %Y') %></span>
+							</p>
+							<%= link_to course, class: 'btn btn-success btn-lg' do %><i class="fa fa-chevron-circle-right"></i> Find out more<% end %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
