@@ -33,7 +33,7 @@ puts 'New user created: ' << user.name
 user2 = User.create! :name => 'Dan Siepen', :email => 'dan@thecoderfactory.com', :password => 'pleaseme', :password_confirmation => 'pleaseme'
 puts 'New user created: ' << user2.name
 user3 = User.create! :name => 'Andrew Kemp', :email => 'andrew@thecoderfactory.com', :password => 'pleaseme', :password_confirmation => 'pleaseme'
-puts 'New user created: ' << user2.name
+puts 'New user created: ' << user3.name
 user.add_role :admin
 user2.add_role :admin
 user3.add_role :admin

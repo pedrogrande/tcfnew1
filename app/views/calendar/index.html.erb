@@ -1,2 +1,6 @@
-<h1>Calendar#index</h1>
-<p>Find me in app/views/calendar/index.html.erb</p>
+<h1>The Coder Factory Calendar</h1>
+
+<% if any_events_this_month? or any_courses_starting_this_month? %>
+	<h2><%= Date::MONTHNAMES[Date.today.month] %></h2>
+	
+<% end %>

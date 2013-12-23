@@ -6,29 +6,40 @@
 <%= content_for :description, @course.title + ': ' + @course.lead + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
-<div class="panel panel-success">
-				<div class="panel-heading">
-					<h2 class="panel-title"><%= link_to @course.title, @course %>
-
-					<span class="pull-right">
-						<%= link_to new_programme_request_path(:course => @course), class: "btn btn-primary btn-sm" do %>
-							<i class="fa fa-download"></i> Download programme
-						<% end %>
-					</span>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="panel-title"><%= link_to @course.title, @course %></h2>
+			</div>
+		</div>
 
 
-					<br>
-					<span class="start-date">
-						<i class="fa fa-check-circle"></i> <%= @course.duration %> <i class="fa fa-check-circle"></i> AUD <%= @course.price %> <i class="fa fa-check-circle"></i>  Class starts: <%= @course.intakes.first.start_date.strftime('%e %h %Y') %>
-						</span>
-						</h2>
-				</div>
-				<div class="panel-body">
+		<div class="row start-date">
+			<div class="col-md-3">
+				<i class="fa fa-check-circle"></i> <%= @course.duration %> 
+			</div>
+			<div class="col-md-3">
+				<i class="fa fa-check-circle"></i> AUD <%= @course.price %> 
+			</div>
+			<div class="col-md-5">
+				<i class="fa fa-check-circle"></i>  Class starts: <%= @course.intakes.first.start_date.strftime('%e %h %Y') %>
+			</div>
+			
+		</div>
+	</div>
+<div class="panel-body">
+<div class="row">
+
+<div class="col-md-9">
 <h3><%= @course.lead %></h3>
 <p class="lead"><%= @course.intro %></p>
+</div><div class="col-md-3">
+<%= image_tag @course.image, class: 'img-responsive' %>
+</div></div>
 <div class="row">
 <div class="col-md-6">
-<p class="sub-heading-upper">Learn</p>
+<p class="sub-heading-upper">What you'll learn</p>
 <%= @course.description.html_safe %>
 </div>
 <div class="col-md-6">

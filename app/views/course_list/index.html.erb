@@ -11,18 +11,18 @@
 			</div><div class="row">
 		<% end %>
 		<div class="col-md-6">
-			<div class="panel panel-success">
+			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2 class="panel-title">
 						<%= link_to course.title, course %> 
 						<br>
-						<span class="start-date">
+						<small><span class="start-date">
 						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
-						</span>
+						</span></small>
 					</h2>
 				</div>
 				<div class="panel-body">
-					
+					<%= image_tag course.image, class: 'img-responsive pull-left' %>
 					<h3><%= course.lead %></h3>
 					<p><%= course.intro %></p>
 					<%= link_to course, class: 'btn btn-success btn-lg' do %><i class="fa fa-chevron-circle-right"></i> Find out more<% end %>
