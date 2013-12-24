@@ -1,6 +1,13 @@
 <h1>The Coder Factory Calendar</h1>
 
-<% if any_events_this_month? or any_courses_starting_this_month? %>
+<% if @this_months_events or @this_months_intakes %>
 	<h2><%= Date::MONTHNAMES[Date.today.month] %></h2>
 	
+<% elsif @next_months_events or @next_months_intakes %>
+	<h2><%= Date::MONTHNAMES[(Date.today.end_of_month + 1).month] %></h2>
+	<% @next_months_intakes.each do |intake| %>
+		<%= intake.start_date.to_date %> <%= intake.course.title %>
+
+		<br>
+	<% end %>
 <% end %>
