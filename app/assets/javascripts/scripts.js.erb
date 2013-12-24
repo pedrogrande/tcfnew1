@@ -13,6 +13,15 @@ $(document).ready(function() {
 		]
 	});
 
+	// tooltips
+	$('a').tooltip({
+		html: true,
+		placement: 'right'
+	});
+	// $('.pricing').tooltip({
+	//      html: true,
+	//      // other options...
+	// });
 	//  dropdownmenu
 	$('.children, .sub-menu').hide();
 	$('nav ul li:has(ul)').mouseenter(function() {

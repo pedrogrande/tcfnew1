@@ -23,4 +23,6 @@ class Course < ActiveRecord::Base
         true
     end
 
+    
+
 end

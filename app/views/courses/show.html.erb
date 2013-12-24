@@ -25,7 +25,16 @@
 		<div class="row">
 			<div class="col-md-6">
 				<p class="sub-heading-upper">What you'll learn</p>
-				<%= @course.description.html_safe %>
+				<ul class="plus">
+					<% @course.skills.each do |skill| %>
+						<li><%= skill.name.html_safe %> 
+							<% if !skill.description.empty? %>
+								<a href="#" data-toggle="tooltip" title="" data-original-title="<%= skill.description.html_safe %>"><i class="fa fa-question-circle"></i></a>
+							<% end %>
+						</li>
+					<% end %>
+				</ul>
+
 			</div>
 			<div class="col-md-6">
 				<p class="sub-heading-upper">Next class starts soon</p>

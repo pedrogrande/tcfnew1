@@ -79,102 +79,39 @@
 	<div class="grey-box">
 		<div class="wrapper row">
 		<h2>The Coder Factory Courses</h2>
-			<div class="pricing four">
+			<div class="pricing five">
+				<% @courses.each do |course| %>
+					<table class="<%= 'highlighted' if course.highlight %>">
+						<thead>
+							<tr><th class="heading"><%= course.title %></th></tr>
+							<tr><th class="price">$<%= course.price %> <span><%= course.duration %></span></th></tr>
+						</thead>
+						<tbody>
+							<tr><td>
+								<%= display_stars(course).html_safe %>
+							</td></tr>
+							<tr><td><strong>WHAT YOU'LL LEARN:</strong></td></tr>
+							<% course.skills.each do |skill| %>
+								<tr>
+									<td>
+										<%= skill.name.html_safe %> 
+										<% if !skill.description.empty? %>
+											<a href="#" data-toggle="tooltip" title="" data-original-title="<%= skill.description.html_safe %>"><i class="fa fa-question-circle"></i></a>
+										<% end %>
+									</td>
+								</tr>
+							<% end %>
+							<tr><td><%= display_stars(course).html_safe %></td></tr>
+							<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
+						</tbody>
+						<tfoot>
+							<tr><td><%= link_to course, class: 'btn btn-primary' do %><i class="fa fa-info-sign"></i> More info<% end %>
+							 <a href="/enrolments/new?pricing_table=<%= course.slug %>" class="btn btn-success">Enrol</a></td></tr>
+						</tfoot>
+					</table>
+				<% end %>
 				
-				<table>
-					<thead>
-						<tr><th class="heading">BEGINNER CODER</th></tr>
-						<tr><th class="price">$395 <span>3 weeks</span></th></tr>
-					</thead>
-					<tbody>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td>LEARN:</td></tr>
-						<tr><td>UX & UI design with<br>
-						<i class="fa fa-html5 grey"></i> HTML5 + <i class="fa fa-css3 grey"></i> CSS3 + <i class="fa fa-jquery grey"></i> jQuery</td></tr>
-						<tr><td>Beautify your apps with frontend frameworks</td></tr>
-						<tr><td>Object Oriented Programming with Ruby</td></tr>
-						<tr><td>Rapid application development with Ruby on Rails</td></tr>
-						<tr><td>Build a personal web app with your own blog</td></tr>
-						<tr><td>Learn to make use of free, open source software</td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
-					</tbody>
-					<tfoot>
-						<tr><td><a href="/courses/beginner-coder" class="btn btn-primary">More info</a> <a href="/enrolments/new" class="btn btn-success">Enrol</a></td></tr>
-					</tfoot>
-				</table>
 				
-				<table>
-					<thead>
-						<tr><th class="heading">RAILS CODER</th></tr>
-						<tr><th class="price">$1950 <span>8 weeks</span></th></tr>
-					</thead>
-					<tbody>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td>LEARN:</td></tr>
-						<tr><td>Database design</td></tr>
-						<tr><td>Application design</td></tr>
-						<tr><td>Advanced Ruby on Rails techniques</td></tr>
-						<tr><td>Publishing your app to the web</td></tr>
-						<tr><td>Use cool AJAX techniques for an interactive user experience</td></tr>
-						<tr><td>In-app messaging</td></tr>
-						<tr><td>Optimisation & Analytics</td></tr>
-						<tr><td>Launching your app to the world</td></tr>
-						<tr><td>Build a social networking app</td></tr>
-						<tr><td>Build your own app idea!</td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
-					</tbody>
-					<tfoot>
-						<tr><td><a href="/courses/rails-coder" class="btn btn-primary">More info</a> <a href="/enrolments/new" class="btn btn-success">Enrol</a></td></tr>
-					</tfoot>
-				</table>
-				
-				<table>
-					<thead>
-						<tr><th class="heading">ANGULAR CODER</th></tr>
-						<tr><th class="price">$950 <span>4 weeks</span></th></tr>
-					</thead>
-					<tbody>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td>LEARN:</td></tr>
-						<tr><td>Angular.js</td></tr>
-						<tr><td>Advanced front-end design</td></tr>
-						<tr><td>Creating amazing user experiences</td></tr>
-						<tr><td>Adding your Angular front end to your Rails back end</td></tr>
-						<tr><td>Create dynamic and exciting apps</td></tr>
-						<tr><td>Build your own app idea</i></td></tr>
-						<tr><td>Launch your app to the world</td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
-					</tbody>
-					<tfoot>
-						<tr><td><a href="/courses/angular-coder" class="btn btn-primary">More info</a> <a href="/enrolments/new" class="btn btn-success">Enrol</a></td></tr>
-					</tfoot>
-				</table>
-				
-				<table class="highlighted">
-					<thead>
-						<tr><th class="heading">EXPERT CODER</th></tr>
-						<tr><th class="price">$3250 <span>15 weeks</span></th></tr>
-					</thead>
-					<tbody>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td><strong><i class="fa fa-tablet fa-3x grey"></i><br>Free iPad Mini or Nexus 7<br>worth up to $450</strong></td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td>CODER 101 (3 weeks)<br>+<br>RAILS CODER (8 weeks)<br>+<br>ANGULAR CODER (4 weeks)</td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td>The complete programme</td></tr>
-						<tr><td>Lifetime help & support</td></tr>
-						<tr><td>Lifetime friendships</td></tr>
-						<tr><td>Lifetime opportunities for startup success!</td></tr>
-						<tr><td><i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i> <i class="fa fa-star grey"></i></td></tr>
-						<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
-					</tbody>
-					<tfoot>
-						<tr><td><a href="/courses/expert-coder" class="btn btn-primary">More info</a> <a href="/enrolments/new" class="btn btn-success">Enrol</a></td></tr>
-					</tfoot>
-				</table>
 			</div>
 		</div> <!-- END .wrapper FOR .grey-box -->
 	</div>

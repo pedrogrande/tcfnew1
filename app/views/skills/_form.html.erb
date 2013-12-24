@@ -1,8 +1,14 @@
 <%= simple_form_for(@skill) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
+  <div class="form-group">
+    <%= f.input :name, as: :text, input_html: { class: 'form-control', rows: 5} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control', rows: 5} %>
+  </div>
+  <div class="form-group">
+    <%= f.association :courses, as: :check_boxes %>
   </div>
 
   <div class="form-actions">
