@@ -91,15 +91,25 @@
 								<%= display_stars(course).html_safe %>
 							</td></tr>
 							<tr><td><strong>WHAT YOU'LL LEARN:</strong></td></tr>
-							<% course.skills.each do |skill| %>
-								<tr>
-									<td>
-										<%= skill.name.html_safe %> 
-										<% if !skill.description.empty? %>
-											<a href="#" data-toggle="tooltip" title="" data-original-title="<%= skill.description.html_safe %>"><i class="fa fa-question-circle"></i></a>
-										<% end %>
-									</td>
-								</tr>
+							<% if course.course_order < 4 %>
+								<% course.skills.each do |skill| %>
+									<tr>
+										<td>
+											<%= skill.name.html_safe %> 
+											<% if !skill.description.empty? %>
+												<a href="#" data-toggle="tooltip" title="" data-original-title="<%= skill.description.html_safe %>"><i class="fa fa-question-circle"></i></a>
+											<% end %>
+										</td>
+									</tr>
+								<% end %>
+							<% else %>
+								<tr><td><strong>The complete programme!</strong></td></tr>
+								<tr><td>Beginner Coder<br>+<br>Rails Coder<br>+<br>Angular Coder</td></tr>
+								<tr><td><strong>PLUS</strong>
+								</td></tr>
+								<tr><td>Lifetime help & support <a href="#" data-toggle="tooltip" title="" data-original-title="You will be a friend of The Coder Factory for life. You will always be able to return and receive help and support."><i class="fa fa-question-circle"></i></a></td></tr>
+								<tr><td>Lifetime friendships <a href="#" data-toggle="tooltip" title="" data-original-title="You will be sitting next to other driven and smart people, building apps together and talking about startup life. My students all become great friends and look forward to catching up with each other even after their course has finished."><i class="fa fa-question-circle"></i></a></td></tr>
+								<tr><td>Lifetime opportunities for startup success! <a href="#" data-toggle="tooltip" title="" data-original-title="Learning to code means you will be able to create your own tech startup whenever you want to. All it takes is your idea and effort."><i class="fa fa-question-circle"></i></a></td></tr>
 							<% end %>
 							<tr><td><%= display_stars(course).html_safe %></td></tr>
 							<tr><td><strong>BONUS: $600</strong>/12 months Ninefold credit to host your app</td></tr>
