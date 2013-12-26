@@ -13,7 +13,7 @@
     <article id="post-1" class="post">
 
       <header class="entry-header">
-      <h1><%= @post.title %> <%= link_to "edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %></h1> 
+      <h1><%= @post.title %> <%= if user_signed_in? %><%= link_to "edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %><% end %></h1> 
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
           <%= image_tag @post.image, alt: @post.title %>  
@@ -29,7 +29,7 @@
                 <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="<%= @post.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= @post.created_at.strftime('%A, %e %B %Y') %></abbr>
               </li>
               <li>
-                <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comment on Hello world!"><%= pluralize(@post.comments.count, "Response") %></a>
+                <strong><i class="fa fa-comment" title="Comments"></i></strong> <a class="comments-link" href="#comments" title="Comment on Hello world!"><%= pluralize(@comments.count, "Response") %></a>
               </li>
             </ul>
         </div><!-- END .entry-byline -->
@@ -79,10 +79,10 @@
     <!-- Comments ______________________________________-->
     <section id="comments">
 
-      <h3 id="comments-number"><%= pluralize(@post.comments.count, "Response") %></h3>
+      <h3 id="comments-number"><%= pluralize(@comments.count, "Response") %></h3>
       <ol class="comment-list">
         
-        <% @post.comments.each do |comment| %>
+        <% @comments.each do |comment| %>
           <li id="comment-1" class="comment even thread-even depth-1 reader has-avatar">
             <a href="#" rel="external nofollow" title="">
                      <%= gravatar_image_tag(comment.email, :alt => comment.name, class: "avatar avatar-80 photo avatar-default", height: "80", width: "80") %>
