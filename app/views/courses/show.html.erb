@@ -3,7 +3,7 @@
 <%= content_for :link, '/web-development-and-javascript-courses' %>
 <%= content_for :sub_breadcrumb, @course.title %>
 <%= content_for :title, @course.title + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
-<%= content_for :description, @course.title + ': ' + @course.lead + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
+<%= content_for :description, @course.title + ': ' + @course.lead + @course.intro + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
 <div class="panel panel-default">

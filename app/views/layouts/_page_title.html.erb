@@ -3,7 +3,7 @@
           <h1><%= content_for?(:page_title) ? yield(:page_title) : "The Coder Factory" %></h1>
           
           <!-- Breadcrumbs _____________________________________________-->
-          <p itemscope itemtype="http://data-vocabulary.org/Breadcrumb" id="breadcrumbs"><a href="/" rel="home" itemprop="url"><span itemprop="title">Home</span></a> <span class="divider">></span> <% if content_for?(:sub_breadcrumb) %><a href="<%= yield(:link) %>"><%= yield(:breadcrumb) %></a><% else %><%= yield(:breadcrumb) %> <% end %>
+          <p itemscope itemtype="http://data-vocabulary.org/Breadcrumb" id="breadcrumbs"><a href="/" rel="home" itemprop="url"><span itemprop="title">Home</span></a> <span class="divider">></span> <% if content_for?(:sub_breadcrumb) %><a href="<%= yield(:link) %>" itemprop="url"><span itemprop="title"><%= yield(:breadcrumb) %></span></a><% else %><%= yield(:breadcrumb) %> <% end %>
           <% if content_for?(:sub_breadcrumb) %><span class="divider">></span> <%= yield(:sub_breadcrumb) %> <% end %>
           </p>
       </div>

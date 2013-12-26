@@ -9,7 +9,7 @@
 		<div class="entry-byline">
       <ul>
         <li>
-          <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= post.user.user_profile.google_plus %>" target="_blank" title="<%= post.user.name %>"><%= post.user.name %></a></span>
+          <strong><i class="fa fa-user" title="Author"></i></strong> <span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= post.user.user_profile.google_plus %>?rel=author" target="_blank" title="<%= post.user.name %>"><%= post.user.name %></a></span>
         </li>
         <li>
           <strong><i class="fa fa-clock-o" title="Published on"></i></strong> <abbr class="published" title="<%= post.created_at.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= post.created_at.strftime('%A, %e %B %Y') %></abbr>
