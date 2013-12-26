@@ -13,7 +13,7 @@
     <article id="post-1" class="post">
 
       <header class="entry-header">
-      <h1><%= @post.title %></h1> 
+      <h1><%= @post.title %> <%= link_to "edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %></h1> 
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
           <%= image_tag @post.image, alt: @post.title %>  
