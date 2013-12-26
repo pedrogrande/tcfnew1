@@ -13,7 +13,13 @@
     <article id="post-1" class="post">
 
       <header class="entry-header">
-      <h1><%= @post.title %> <%= if user_signed_in? %><%= link_to "edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %><% end %></h1> 
+      <h1><%= @post.title %> 
+          <% if user_signed_in? %>
+            <% if current_user.has_role? :admin %>
+              <%= link_to "edit", edit_post_path(@post), class: 'btn btn-warning btn-sm' %>
+            <% end %>
+          <% end %>
+        </h1> 
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
           <%= image_tag @post.image, alt: @post.title %>  
