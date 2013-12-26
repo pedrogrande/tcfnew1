@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Comment on blog</h1>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @comment.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @comment.email %></td>
+      </tr>
+      <tr>
+        <th>subject:</th>
+        <td><%= @comment.website %></td>
+      </tr>
+      <tr>
+        <th>Message:</th>
+        <td><%= @comment.content %></td>
+      </tr>
+      <tr>
+        <th>Link to comment</th>
+        <td><%= link_to 'comment', comment_url(@comment) %></td>
+      </tr>
+      
+    </table>
+  </body>
+</html>
