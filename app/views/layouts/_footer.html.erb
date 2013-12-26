@@ -54,11 +54,11 @@
 				<h3>Contact Us</h3>
 				<div itemscope itemtype="http://schema.org/Organization"> 
    					
-						<p><span itemprop="name">The Coder Factory</span> <br/>
-						<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				<span itemprop="streetAddress">C/o Redant<br/>
-				Level 2, 162 Goulburn Street</span><br>
-				<span itemprop="addressLocality">Surry Hills</span> <span itemprop="addressRegion">NSW</span> <span itemprop="postalCode">2010</span></p>
+					<p><span itemprop="name">The Coder Factory</span> <br/>
+				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span itemprop="streetAddress">C/o Redant<br/>
+					Level 2, 162 Goulburn Street</span><br>
+					<span itemprop="addressLocality">Surry Hills</span> <span itemprop="addressRegion">NSW</span> <span itemprop="postalCode">2010</span></div></p>
 
 
 				<ul class="contact-info">
@@ -71,8 +71,28 @@
 		</div> <!-- END .widgets -->
 		
 		<div class="bottom">
+		<div class="row">
+		<div class="col-md-4">
 			<a href="http://ninefold.com/" title="Ruby on Rails hosting by Ninefold" target="_blank">Rails Hosting by Ninefold</a> &nbsp; <a href="http://ninefold.com/" title="Ruby on Rails hosting by Ninefold" target="_blank"><%= image_tag 'small-transparent-ninefold-.png', height: '25px', title:"Ruby on Rails hosting by Ninefold" %></a>
-			<p class="right">&copy; 2013 The Coder Factory. All rights reserved | <%= link_to "Privacy", privacy_path %></p>
+		</div>
+		<div class="col-md-4">
+					<script>
+					  (function() {
+					    var cx = '013907893581764350641:jsqs5tsu7yg';
+					    var gcse = document.createElement('script');
+					    gcse.type = 'text/javascript';
+					    gcse.async = true;
+					    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+					        '//www.google.com/cse/cse.js?cx=' + cx;
+					    var s = document.getElementsByTagName('script')[0];
+					    s.parentNode.insertBefore(gcse, s);
+					  })();
+					</script>
+					<gcse:search></gcse:search>
+		</div>
+		<div class="col-md-4">
+			<p>&copy; 2013 The Coder Factory. All rights reserved | <%= link_to "Privacy", privacy_path %></p>
+		</div>
 		</div>
 
 	</div> <!-- END .wrapper FOR footer -->
