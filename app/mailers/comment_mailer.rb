@@ -8,6 +8,6 @@ class CommentMailer < ActionMailer::Base
   #
   def received(comment)
     @comment = comment
-    mail(to: "info@thecoderfactory.com", subject: "Comment on The Coder Factory blog")
+    mail(to: "pete@thecoderfactory.com", subject: "Comment on The Coder Factory blog")
   end
 end
