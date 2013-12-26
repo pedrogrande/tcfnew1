@@ -29,7 +29,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.post, notice: 'Comment was successfully created.' }
+        CommentMailer.received(@comment).deliver
+        format.html { redirect_to @comment.post, notice: 'Thanks for your comment. It will be published after being checked by an admin.' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
         format.html { render action: 'new' }

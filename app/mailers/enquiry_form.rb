@@ -7,9 +7,7 @@ class EnquiryForm < ActionMailer::Base
   #   en.enquiry_form.received.subject
   #
   def received(enquiry)
-    @greeting = "Hi"
-
-    mail(to: "pete@thecoderfactory.com, dan@thecoderfactory.com, kim@thecoderfactory.com", :subject => "Enquiry Received")
+   mail(to: "pete@thecoderfactory.com, dan@thecoderfactory.com, kim@thecoderfactory.com", :subject => "Enquiry Received")
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,7 +16,6 @@ class EnquiryForm < ActionMailer::Base
   #   en.enquiry_form.response.subject
   #
   def response(enquiry)
-    @greeting = "Hi"
     @enquiry = enquiry
     mail(to: @enquiry.email, :subject => "Your enquiry has been sent")
   end
