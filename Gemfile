@@ -26,6 +26,7 @@ gem "parsley-rails"
 gem 'sitemap_generator'
 gem 'whenever', :require => false
 gem "nested_form"
+gem 'honeypot-captcha'
 group :development do
   gem 'better_errors'
   gem 'sqlite3'
