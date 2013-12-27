@@ -15,7 +15,7 @@
 			<div class="col-md-9">
 				<h3><%= @course.lead %></h3>
 				<p class="lead"><%= @course.intro %></p>
-				<%= link_to @course.programme.url, class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+				<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
 				<br>
 			</div>
 			<div class="col-md-3">

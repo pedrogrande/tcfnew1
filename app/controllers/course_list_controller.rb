@@ -1,5 +1,5 @@
 class CourseListController < ApplicationController
   def index
-  	@courses = Course.published
+  	@courses = Course.ordered_by_course_order.published
   end
 end

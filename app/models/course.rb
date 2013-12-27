@@ -8,9 +8,13 @@ class Course < ActiveRecord::Base
     has_many :enrolments, through: :course_enrolments
 	extend FriendlyId
     friendly_id :title, use: :slugged
-    default_scope order: 'courses.priority ASC'
     mount_uploader :programme, ProgrammeOutlineUploader
     mount_uploader :image, PostImageUploader
+
+    def self.ordered_by_course_order
+        order(course_order: :asc)
+    end
+
     def self.published
     	self.where(active: true)
     end

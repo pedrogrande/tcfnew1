@@ -30,6 +30,7 @@ deets.txt
 .sass-cache
 /config/config.yml
 /config/database.yml
+/config/initializers/secret_token.rb
 /coverage.data
 /coverage/
 /db/*.javadb/

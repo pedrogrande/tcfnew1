@@ -10,9 +10,13 @@ class Post < ActiveRecord::Base
 
 	accepts_nested_attributes_for :categories
 	validates :title, :lead, :content, presence: true
+
 	default_scope order: 'posts.created_at DESC'
+	def self.ordered_reverse_chronologically
+		order(created_at: :desc)
+	end
 
 	def self.published
-		self.where('publish = ?', true)
+		where(publish: true)
 	end
 end

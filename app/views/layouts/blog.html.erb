@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Web Development Articles - The Coder Factory Blog" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "The Coder Factory" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!--[if lt IE 9]>
         <script src="html5shiv.js"></script>
@@ -51,7 +52,7 @@
 <!-- END footer -->
 
 
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    
 <!-- Custom Page Scripts _____________________________________________-->
 <script>    
 jQuery(document).ready(function() {

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	layout 'home'
   def index
-    @post = Post.first
-    @courses = Course.unscoped.order(course_order: :asc)
+    @post = Post.ordered_reverse_chronologically.first
+    @courses = Course.ordered_by_course_order
   end
 end
