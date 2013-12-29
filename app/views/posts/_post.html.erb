@@ -1,5 +1,6 @@
 <article id="post" class="post format-standard sticky">
   <header class="entry-header">
+    <h1><%= link_to post.title, post %></h1>  
 		<!-- Post Featured Image _______________________________________________-->
 		<div class="post-thumb">
 			<%= image_tag post.image, alt: post.title %>	
@@ -23,7 +24,7 @@
 	</header> <!-- END .entry-header -->
   <div class="entry-summary">
 		<!-- Heading _______________________________________________-->
-		<h1><%= link_to post.title, post %></h1>    
+		  
 		
 		<!-- WYSIWYG Content ______________________________________-->
 		<p class="lead"><%= post.lead.html_safe %></p>

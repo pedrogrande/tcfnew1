@@ -1,6 +1,21 @@
 		<!-- Sidebar _______________________________________________-->
 		<aside id="sidebar">
-
+			<div class="widget">
+				<h3>Recent Posts</h3>
+				<ul class="popular-posts">
+					<% @recent_posts.each do |recent_post| %>
+					<li>
+						<div class="post-thumb"> 
+							<%= link_to recent_post do %><%= image_tag recent_post.image %><% end %>
+						</div>
+						<div class="entry-summary">
+							<h4><%= link_to recent_post.title, recent_post %></h4>
+							<p class="entry-meta"> <%= recent_post.created_at.strftime('%e %B %Y') %></p>
+						</div><div class="clear"></div>
+					</li>
+					<% end %>
+				</ul>
+			</div>
 			<div class="widget">
 				<h3>Categories</h3>
 				<ul class="sidemenu">
@@ -24,22 +39,7 @@
 				<div class="clear"></div>
 			</div>
 			
-			<div class="widget">
-				<h3>Recent Posts</h3>
-				<ul class="popular-posts">
-					<% @recent_posts.each do |recent_post| %>
-					<li>
-						<div class="post-thumb"> 
-							<%= link_to recent_post do %><%= image_tag recent_post.image %><% end %>
-						</div>
-						<div class="entry-summary">
-							<h4><%= link_to recent_post.title, recent_post %></h4>
-							<p class="entry-meta"> <%= recent_post.created_at.strftime('%e %B %Y') %></p>
-						</div><div class="clear"></div>
-					</li>
-					<% end %>
-				</ul>
-			</div>
+			
 			
 		</aside><!-- END #sidebar -->
 
