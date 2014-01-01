@@ -3,58 +3,25 @@
 		<a href="javascript:void(0)" class="prev1"></a>
 		<a href="javascript:void(0)" class="next1"></a>
 		<ul id="slides">
-			
+			<% @sliders.each do |slider| %>
 			<li class="slide">
 				<div class="wrapper">
 					<div class="slide-text">
-						<p class="big">Summer Coder Camp</p>
-						<p>Six weeks of fun and coding!<br>
-						Starts January 2014
+						<p class="big"><%= slider.title.html_safe %></p>
+						<p><%= slider.content.html_safe %>
 						<br><br>
-						<a href="/courses/summer-coder-camp-rails-angular?button=slide" alt="Summer Coder Camp" class="btn btn-default btn-lg">Places are limited</a></p>
+						<%= link_to slider.button_text, slider.button_url, alt: slider.title.html_safe, class: "btn btn-default btn-lg" %></p>
 					</div>
 					<div class="slide-image">
-						<%= image_tag "RobotBeach.png", alt: '' %>
+						<%= image_tag slider.image %>
 					</div>
 				</div>
 				<div class="slide-back">
 					
 				</div>
 			</li>
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						<p class="big">Free Info Session.</p>
-						<p>Do you want the power to code?<br>Come along and find out how much fun it can be to learn to code and build apps at The Coder Factory.</p>
-						<br>
-						<a href="http://www.eventbrite.com/e/the-coder-factory-information-session-tickets-9990446695?aff=slider" alt="Free info session" class="btn btn-default btn-lg">Reserve your place</a></p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "FB_Cover2.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					
-				</div>
-			</li>
+			<% end %>
 			
-			<li class="slide">
-				<div class="wrapper">
-					<div class="slide-text">
-						
-						<p class="big">Can't find a<br>tech co-founder?</p>
-						<p>Learn to code and build your own MVP. You will then have something real to inspire developers, investors and even customers.</p>
-						<br>
-						<a href="/web-development-and-javascript-courses?button=cofounder" alt="Summer Coder Camp" class="btn btn-default btn-lg">Get started</a></p>
-					</div>
-					<div class="slide-image">
-						<%= image_tag "RobotSearch.png", alt: '' %>
-					</div>
-				</div>
-				<div class="slide-back">
-					<!-- no background image for this slide -->
-				</div>
-			</li>
 			
 		</ul>
 	</section>
