@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Enrolment:</strong>
+  <%= @payment.enrolment %>
+</p>
+
+<p>
+  <strong>Payment amount:</strong>
+  <%= @payment.payment_amount %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

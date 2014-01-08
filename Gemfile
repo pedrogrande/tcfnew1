@@ -27,6 +27,7 @@ gem 'sitemap_generator'
 gem 'whenever', :require => false
 gem "nested_form"
 gem 'honeypot-captcha'
+gem 'stripe', '~> 1.8.3'
 group :development do
   gem 'better_errors'
   gem 'sqlite3'

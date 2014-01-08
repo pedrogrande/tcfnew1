@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140101233608) do
+ActiveRecord::Schema.define(version: 20140108201920) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -113,6 +113,9 @@ ActiveRecord::Schema.define(version: 20140101233608) do
     t.boolean  "follow_up"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_price"
+    t.string   "guid"
+    t.integer  "minimum_payment"
   end
 
   create_table "events", force: true do |t|
@@ -157,6 +160,15 @@ ActiveRecord::Schema.define(version: 20140101233608) do
   end
 
   add_index "intakes", ["course_id"], name: "index_intakes_on_course_id"
+
+  create_table "payments", force: true do |t|
+    t.integer  "enrolment_id"
+    t.integer  "payment_amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["enrolment_id"], name: "index_payments_on_enrolment_id"
 
   create_table "plans", force: true do |t|
     t.string   "name"

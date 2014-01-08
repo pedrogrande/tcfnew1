@@ -1,4 +1,6 @@
 Tcfnew1::Application.routes.draw do
+  resources :payments
+
   resources :sliders
 
   root :to => "home#index"
