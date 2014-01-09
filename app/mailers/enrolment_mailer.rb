@@ -6,8 +6,9 @@ class EnrolmentMailer < ActionMailer::Base
   #
   #   en.download_programme.response.subject
   #
-  def response(enrolment)
+  def response(enrolment, amount)
     @enrolment = enrolment
+    @amount = amount
     mail(to: @enrolment.email, subject: "You are now enrolled in The Coder Factory")
   end
 

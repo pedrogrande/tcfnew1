@@ -789,7 +789,14 @@ body.outlook p {
                             <p>You are now a part of The Coder Factory family - congratulations!</p><br>
                             <p>We are passionate about coding here and know you will have fun learning with us.</p>
                             <br>
-                            <p>Your payment of <%= sprintf("$%0.2f", @amount.to_i / 100.0) %> has been processed and a receipt will be sent to you shortly.</p>
+                            <p><strong>Here are the bank details for you to arrange your payment.</strong></p>
+                            <br>
+                            <table>
+                            <tr><td width="50%">Bank</td><td><strong>Bendigo Bank</strong></td></tr>
+                            <tr><td>BSB</td><td><strong>633-000</strong></td></tr>
+                            <tr><td>Account no.</td><td><strong>150259307</strong></td></tr>
+                            <tr><td>Amount</td><td><strong><%= sprintf("$%0.2f", @amount.to_i / 100.0) %></strong></td></tr>
+                            </table>
                             <br>
                             <p>We will soon be sending you more information to help you prepare for the start of your course, so keep an eye on your inbox.</p><br>
                             <p>In the meantime, if you have any questions at all, please do not hesitate to contact us.</p><br>

@@ -1,35 +1,38 @@
 class TransactionsController < ApplicationController
+	
 	def new
 	    @enrolment = Enrolment.find_by!(guid: params[:guid])
 	  end
 
-	  def show
-	    @sale = Sale.find_by!(guid: params[:guid])
-	    @product = @sale.product
-	  end
-
-	  def create
+	def create
 	    enrolment = Enrolment.find_by!(guid: params[:guid])
-
+	    amount = params[:amount]
 	    token = params[:stripeToken]
+
+	    stripe_customer = Stripe::Customer.create(
+	      :card => token,
+	      :description => enrolment.name
+	    )
 
 	    begin
 	      charge = Stripe::Charge.create(
-	        amount:      ,
-	        currency:    "aud",
-	        card:        token,
-	        description: params[:email]
+	      	amount: 	amount, 
+	        currency:   "aud",
+	        customer:   stripe_customer.id
 	      )
-	      @sale = enrolment.sales.create!(
+	      @payment = enrolment.payments.create!(
 	        enrolment_id: enrolment.id,
-	        email:      params[:email]
+	        payment_amount: amount
 	      )
-	      redirect_to pickup_url(guid: @sale.guid)
+	      enrolment.stripe_id = stripe_customer.id
+	      EnrolmentMailer.response(enrolment, amount).deliver
+	      redirect_to enrolment_thanks_url(guid: enrolment.guid)
 	    rescue Stripe::CardError => e
 	      # The card has been declined or
 	      # some other error has occured
 	      @error = e
 	      render :new
 	    end
-	  end
+
+	end
 end

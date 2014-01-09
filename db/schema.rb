@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108201920) do
+ActiveRecord::Schema.define(version: 20140109042637) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20140108201920) do
     t.datetime "updated_at"
     t.integer  "total_price"
     t.string   "guid"
-    t.integer  "minimum_payment"
+    t.string   "stripe_id"
   end
 
   create_table "events", force: true do |t|

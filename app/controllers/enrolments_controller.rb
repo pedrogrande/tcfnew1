@@ -26,17 +26,36 @@ class EnrolmentsController < ApplicationController
   def create
     @enrolment = Enrolment.new(enrolment_params)
 
-    respond_to do |format|
-      if @enrolment.save
-        EnrolmentMailer.response(@enrolment).deliver
-        EnrolmentMailer.received(@enrolment).deliver
-        format.html { redirect_to enrolment_thanks_path, notice: 'You are now enrolled in The Coder Factory!' }
-        format.json { render action: 'show', status: :created, location: @enrolment }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @enrolment.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @enrolment.save
+          EnrolmentMailer.received(@enrolment).deliver
+          format.html {redirect_to new_transaction_path(guid: @enrolment.guid)}
+          format.json {
+            render json: @enrolment,
+              status: :created,
+              location: @enrolment
+          }
+        else
+          format.html { render 'new' }
+          format.json {
+            render json: @enrolment.errors,
+              status: :unprocessable_entity
+          }
+        end
+        
+        
       end
-    end
+    # respond_to do |format|
+    #   if @enrolment.save
+    #     # EnrolmentMailer.response(@enrolment).deliver
+    #     # EnrolmentMailer.received(@enrolment).deliver
+    #     format.html { redirect_to new_transactions_path, notice: 'You are now enrolled in The Coder Factory!' }
+    #     format.json { render action: 'show', status: :created, location: @enrolment }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @enrolment.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /enrolments/1
@@ -44,7 +63,7 @@ class EnrolmentsController < ApplicationController
   def update
     respond_to do |format|
       if @enrolment.update(enrolment_params)
-        format.html { redirect_to @enrolment, notice: 'Enrolment was successfully updated.' }
+        format.html { redirect_to new_transaction_path(guid: @enrolment.guid) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
