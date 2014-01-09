@@ -1,4 +1,6 @@
 Tcfnew1::Application.routes.draw do
+  resources :payments
+
   resources :sliders
 
   root :to => "home#index"
@@ -20,6 +22,8 @@ Tcfnew1::Application.routes.draw do
   resources :user_profiles
   resources :comments
   resources :categories
+  resources :transactions, only: [:new, :create]
+  resources :bank_transfers, only: :index
   get "calendar" => "calendar#index"
   get "privacy" => "privacy#index"
   get "blog" => "blog#index"
@@ -28,6 +32,7 @@ Tcfnew1::Application.routes.draw do
   get "web-development-and-javascript-courses", to: "course_list#index"
   get "thanks" => "thanks#index"
   get "enrolment_thanks" => "enrolment_thanks#index"
+  # get "bank_transfers" => "bank_transfers#index"
 
   # redirections
   

@@ -1,0 +1,75 @@
+<h1>Welcome <%= @enrolment.name %></h1>
+
+<div class="row">
+<div class="col-md-4">
+<h2>Your courses</h2>
+<div class="well">
+<table class="table courses">
+	<thead>
+		<tr class="active">
+			<th>Course</th>
+			<th class="course-cost">Price (incl. GST)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @enrolment.courses.each do |course| %>
+			<tr>
+				<td><%= course.title %></td>
+				<td class="course-cost"><%= number_to_currency(course.price) %></td>
+			</tr>
+		<% end %>
+		<tr class="active">
+			<th>Total</th>
+			<th class="course-cost"><%= formatted_price(@enrolment.total_price) %></th>
+		</tr>
+	</tbody>
+</table>
+
+</div></div>
+<div class="col-md-8">
+<h2>Payment</h2>
+<% if @error %>
+<%= @error %>
+<% end %>
+<div class="row">
+<div class="col-md-4"><div class="well">
+	<% if @enrolment.total_price > 50000 %>
+		<h3>Pay upfront & save</h3>
+		<p>Your price: <%= formatted_price(@enrolment.total_price) %></p>
+	<% else %>
+		<h3>Your price: <%= formatted_price(@enrolment.total_price) %></h3>
+	<% end %>
+<%= link_to "Pay via bank transfer", bank_transfers_path(guid: @enrolment.guid, amount: @enrolment.total_price), class: 'btn btn-success payment-button' %>
+<%= form_tag transactions_path(guid: @enrolment.guid, amount: @enrolment.total_price) do %>
+  <script src="https://checkout.stripe.com/v2/checkout.js"
+    class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="The Coder Factory"
+    data-description="<%= @enrolment.name %>'s payment"
+    data-image="<%= asset_path 'logo2.png' %>"
+    data-amount="<%= @enrolment.total_price %>"
+    data-email="<%= @enrolment.email %>"
+    data-label="Pay with credit card"></script>
+<% end %>
+</div></div>
+<% if @enrolment.total_price > 50000 %>
+<div class="col-md-8"><div class="well">
+<h3>Reserve your place with a $500 deposit</h3>
+<p>We'll email you with your future payment options.</p>
+
+	<%= link_to "Pay via bank transfer", bank_transfers_path(guid: @enrolment.guid, amount: 50000), class: 'btn btn-success payment-button' %>
+	<%= form_tag transactions_path(guid: @enrolment.guid, amount: 50000) do %>
+	  <script src="https://checkout.stripe.com/v2/checkout.js"
+	    class="stripe-button"
+	    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+	    data-name="The Coder Factory"
+	    data-description="<%= @enrolment.name %>'s deposit"
+	    data-image="<%= asset_path 'logo2.png' %>"
+	    data-amount="50000"
+	    data-email="<%= @enrolment.email %>"
+	    data-label="Pay with credit card"></script>
+	<% end %>
+
+</div></div>
+<% end %>
+</div></div></div>

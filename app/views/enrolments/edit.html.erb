@@ -1,6 +1,58 @@
-<h1>Editing enrolment</h1>
+<%= content_for :page_title, 'Enrol in The Coder Factory' %>
+<%= content_for :breadcrumb, 'Enrol in The Coder Factory' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @enrolment %> |
-<%= link_to 'Back', enrolments_path %>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h4 class="panel-title"><i class="fa fa-smile-o"></i> Thanks for choosing to study at The Coder Factory! </h4>
+	</div>
+	<div class="panel-body">
+	
+	<p>Please allow us to get to know you better.<br>We are a friendly bunch here and already looking forward to meeting you.</p>
+	<div class="well">
+		<%= simple_form_for(@enrolment) do |f| %>
+		  <%= f.error_notification %>
+		  <div class="row">
+		  <div class="col-md-5">
+		  <div class="form-group">
+		    <%= f.input :name, input_html: { class: 'form-control'}, label: 'Please enter your name' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :email, input_html: { class: 'form-control'}, label: 'Please provide your email' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :phone, input_html: { class: 'form-control'}, label: 'Please divulge your contact number' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :linkedin, input_html: { class: 'form-control'}, label: 'Let us check you out on LinkedIn by providing the link to your profile.' %>
+		  </div>
+		  </div>
+		  <div class="col-md-6 col-md-offset-1">
+		  <div class="form-group">
+		    <%= f.association :courses, as: :check_boxes, label: 'Please select the course/s are you enrolling in?' %>
+		  </div>
+		  </div>
+		  </div>
+		  <div class="row">
+		  <div class="col-md-12">
+		  <div class="form-group">
+		    <%= f.input :about, input_html: { class: 'form-control', rows: '5'} , label: 'Please tell us a bit about yourself'%>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :study, input_html: { class: 'form-control', rows: '5'}, label: 'What were your favourite subjects at school or university?' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :career, input_html: { class: 'form-control', rows: '5'}, label: 'Have you already started a career? What industries/sectors have you worked in?' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :reason, input_html: { class: 'form-control', rows: '5'}, label: 'What drives you to want to learn coding?' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.input :goals, input_html: { class: 'form-control', rows: '5'}, label: 'What are your goals for after completing your course at The Coder Factory?' %>
+		  </div>
+		  <p>Thanks again. We will see you soon.</p>
+		  <%= f.submit 'Enrol yourself in The Coder Factory', class: 'btn btn-success btn-lg' %>
+		  </div>
+		<% end %>
+		</div></div>
+	</div>
+</div>
