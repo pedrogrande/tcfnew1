@@ -6,14 +6,15 @@
 <%= content_for :description, @course.title + ': ' + @course.lead + @course.intro + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
+<h1><%= @course.title %> &nbsp;&nbsp;<small><%= @course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= @course.price %> </small></h1>
 <div class="panel panel-default">
 	<div class="panel-heading">
-				<h2 class="panel-title"><%= link_to @course.title, @course %> &nbsp;&nbsp;<small><%= @course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= @course.price %> </small></h2>
+				<h2 class="panel-title"><%= @course.lead %></h2>
 	</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-9">
-				<h3 class="hype"><%= @course.lead %></h3>
+				<h3 class="hype"></h3>
 				<p><%= link_to new_enrolment_path(:course => @course), class: "btn btn-success" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
 				&nbsp;
 				<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
@@ -51,13 +52,13 @@
 								<%= intake.start_date.strftime('%e/%m/%y') %> 
 								<a href="#" data-toggle="tooltip" title="" data-original-title="Finishes <%= intake.end_date.strftime('%A, %e %h %Y') %>"><i class="fa fa-question-circle"></i></a>
 							</td>								
-							<td><%= intake.class_days %><br><%= intake.start_time.strftime('%l%P') %> - <%= @next_intake.finish_time.strftime('%l%P') %></td>
+							<td><%= intake.class_days %><br><%= intake.start_time.strftime('%l%P') %> - <%= intake.finish_time.strftime('%l%P') %></td>
 							<td><%= intake.location %></td>
 							<td style="text-align:center;">
 								<% if intake.class_full %>
 									<span class="badge">Class full!</span>
 								<% else %>
-									<span class="badge badge-success"><%= @next_intake.places_left %></span>
+									<span class="badge badge-success"><%= intake.places_left %></span>
 								<% end %>
 							</td>
 						</tr>
