@@ -23,6 +23,10 @@ class Course < ActiveRecord::Base
     	self.intakes.where("start_date >= ?", Date.today).order(start_date: :asc)
     end
 
+    def next_available_intake
+        self.future_intakes.where(class_full: false)
+    end
+
     def any_courses_starting_this_month?
         true
     end
