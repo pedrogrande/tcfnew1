@@ -23,7 +23,7 @@ class Course < ActiveRecord::Base
     	self.intakes.where("start_date >= ?", Date.today).order(start_date: :asc)
     end
 
-    def next_available_intake
+    def next_available_intakes
         self.future_intakes.where(class_full: false)
     end
 

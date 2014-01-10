@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @next_intake = @course.next_available_intake.first
+    @next_intake = @course.next_available_intakes.first
     @intakes = @course.future_intakes
     @courses = Course.all
     @programme_request = ProgrammeRequest.new
