@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140109042637) do
+ActiveRecord::Schema.define(version: 20140109234846) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -157,6 +157,8 @@ ActiveRecord::Schema.define(version: 20140109042637) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "class_full"
+    t.integer  "places_left"
   end
 
   add_index "intakes", ["course_id"], name: "index_intakes_on_course_id"

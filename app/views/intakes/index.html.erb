@@ -20,14 +20,14 @@
   <tbody>
     <% @intakes.each do |intake| %>
       <tr>
-        <td><%= intake.start_date %></td>
-        <td><%= intake.end_date %></td>
+        <td><%= intake.start_date.strftime('%A, %e %h %Y') %></td>
+        <td><%= intake.end_date.strftime('%A, %e %h %Y') %></td>
         <td><%= intake.class_days %></td>
         <td><%= intake.start_time %></td>
         <td><%= intake.finish_time %></td>
         <td><%= intake.location %></td>
         <td><%= intake.notes %></td>
-        <td><%= intake.course %></td>
+        <td><%= intake.course.title %></td>
         <td><%= link_to 'Show', intake %></td>
         <td><%= link_to 'Edit', edit_intake_path(intake) %></td>
         <td><%= link_to 'Destroy', intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>

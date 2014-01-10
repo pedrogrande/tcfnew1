@@ -11,10 +11,10 @@
     <%= f.input :lead, input_html: { class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :intro, input_html: { class: 'form-control'} %>
+    <%= f.input :intro, as: :text, input_html: { class: 'form-control', rows: 10} %>
   </div>
   <div class="form-group">
-    <%= f.input :description, input_html: { class: 'form-control'} %>
+    <%= f.input :description, as: :text, input_html: { class: 'form-control', rows: 10} %>
   </div>
   <div class="form-group">
     <%= f.input :designed_for, input_html: { class: 'form-control'} %>

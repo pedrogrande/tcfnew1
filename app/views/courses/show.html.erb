@@ -8,14 +8,20 @@
 <div class="col-md-8">
 <div class="panel panel-default">
 	<div class="panel-heading">
-				<h2 class="panel-title"><%= link_to @course.title, @course %> <small><%= @course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= @course.price %></small></h2>
+				<h2 class="panel-title"><%= link_to @course.title, @course %> &nbsp;&nbsp;<small><%= @course.duration %> <i class="fa fa-angle-double-right"></i> AUD <%= @course.price %> </small></h2>
 	</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-9">
-				<h3><%= @course.lead %></h3>
-				<p class="lead"><%= @course.intro %></p>
+				<h3 class="hype"><%= @course.lead %></h3>
+				<p><%= link_to new_enrolment_path(:course => @course), class: "btn btn-success" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
+				&nbsp;
 				<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+				</p>
+				<p class="lead"><%= @course.intro.html_safe %></p>
+				<h3>The programme</h3>
+				<%= @course.description.html_safe %>
+				
 				<br>
 			</div>
 			<div class="col-md-3">
@@ -38,13 +44,35 @@
 			</div>
 			<div class="col-md-6">
 				<p class="sub-heading-upper">Next class starts soon</p>
+				<% if !@intake.places_left.nil? %>
+					<strong>
+						<span class="red"> 
+							<span class="badge">
+								Only <%= pluralize(@intake.places_left, 'place') %> left 
+							</span>
+						</span>
+					</strong>
+				<% end %>
 				<ul class="star">
 					<li>Start date: <span class="start-date"><%= @intake.start_date.strftime('%A, %e %h %Y') %></span></li>
 					<li>Location: <%= @intake.location %></li>
 					<li><%= @intake.class_days %></li>
 					<li><%= @intake.start_time.strftime('%l:%M%P') %> - <%= @intake.finish_time.strftime('%l:%M%P') %></li>
 				</ul>
-				<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Reserve your place. Enrol now.<% end %>
+				<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
+				<br><br>
+				<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+
+				<br><br>
+				<% if @intakes.count > 1 %>
+				<div class="well">
+					<h3>Upcoming intakes</h3>
+					<% @intakes.each do |intake| %>
+						<p>Start date: <span class="start-date"><%= intake.start_date.strftime('%A, %e %h %Y') %></span></p>
+					<% end %>
+				
+				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

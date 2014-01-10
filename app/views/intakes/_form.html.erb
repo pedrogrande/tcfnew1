@@ -2,6 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.association :course %>
+    <%= f.input :class_full %>
+    <%= f.input :places_left %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :class_days %>
@@ -9,7 +12,6 @@
     <%= f.input :finish_time %>
     <%= f.input :location %>
     <%= f.input :notes %>
-    <%= f.association :course %>
   </div>
 
   <div class="form-actions">
