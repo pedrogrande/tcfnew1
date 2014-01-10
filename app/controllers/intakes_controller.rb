@@ -69,6 +69,6 @@ class IntakesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def intake_params
-      params.require(:intake).permit(:start_date, :end_date, :class_days, :start_time, :finish_time, :location, :notes, :course_id)
+      params.require(:intake).permit(:places_left, :class_full, :start_date, :end_date, :class_days, :start_time, :finish_time, :location, :notes, :course_id)
     end
 end
