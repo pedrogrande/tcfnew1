@@ -13,6 +13,18 @@ $(document).ready(function() {
 		]
 	});
 
+
+	// init jCarousel for portfolio pieces
+	$('.sneakpeak-carousel').jcarousel({
+		'wrap': 'both'
+	});
+	$('.sneakpeak-prev').click(function() {
+		$('.sneakpeak-carousel').jcarousel('scroll', '-=1');
+	});
+	$('.sneakpeak-next').click(function() {
+		$('.sneakpeak-carousel').jcarousel('scroll', '+=1');
+	});
+
 	// tooltips
 	$('a').tooltip({
 		html: true,
