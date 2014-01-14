@@ -22,15 +22,12 @@
   </header>
     <%= render 'layouts/page_title' %>
     <%= render 'layouts/map' if current_page?(contact_path) %>
-    
       <section id="content" class="full-width" role="main">
         <div class="wrapper">
           <%= render 'layouts/messages' %>
           <%= yield %>
-          
         </div>
       </section><!-- END #content -->
-    
     <%= render 'layouts/back_to_top' %>
     <%= render 'layouts/footer' %>
   </body>
