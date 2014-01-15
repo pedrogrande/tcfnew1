@@ -2,13 +2,6 @@
 #
 # To ban all spiders from the entire site uncomment the next two lines:
 User-agent: *
-Disallow: /enrolment_thanks
-Disallow: /thanks
-Disallow: /skills/*
-Disallow: /user_profiles/*
-Disallow: /categories
-Disallow: /categories/*
-Disallow: /enquiries
 Disallow: /comments
 Sitemap: http://www.example.com/sitemap.xml.gz
 Host: thecoderfactory.com
