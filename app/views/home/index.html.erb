@@ -104,7 +104,7 @@
 	<div class="white-box">
 		<div class="wrapper row">
 		<h2>The Coder Factory Courses</h2>
-			<div class="pricing five">
+			<div class="pricing <%= @courses.count %>">
 				<% @courses.each do |course| %>
 					<table class="<%= 'highlighted' if course.highlight %>">
 						<thead>

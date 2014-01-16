@@ -11,8 +11,12 @@ class Course < ActiveRecord::Base
     mount_uploader :programme, ProgrammeOutlineUploader
     mount_uploader :image, PostImageUploader
 
+    def self.active_courses
+        where(active: true)
+    end
+
     def self.ordered_by_course_order
-        order(course_order: :asc)
+        active_courses.order(course_order: :asc)
     end
 
     def self.published
