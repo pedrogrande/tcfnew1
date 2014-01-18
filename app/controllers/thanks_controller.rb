@@ -1,5 +1,5 @@
 class ThanksController < ApplicationController
   def index
-  	@courses = Course.all
+  	@active_courses = Course.active_courses
   end
 end

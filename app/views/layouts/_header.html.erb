@@ -11,7 +11,7 @@
 
 					<li><a href="/web-development-and-javascript-courses" class="<%= 'active' if current_page?(courses_path)%>">Courses <i class="fa fa-angle-down"></i></a>
 						<ul class="sub-menu">
-							<% @courses.each do |course| %>
+							<% @submenu_courses.each do |course| %>
 								<li><%= link_to course.title, course %></li>
 							<% end %>
 						</ul>

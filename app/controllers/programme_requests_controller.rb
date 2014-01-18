@@ -15,6 +15,7 @@ class ProgrammeRequestsController < ApplicationController
   # GET /programme_requests/new
   def new
     @programme_request = ProgrammeRequest.new
+    @active_courses = Course.active_courses
   end
 
   # GET /programme_requests/1/edit

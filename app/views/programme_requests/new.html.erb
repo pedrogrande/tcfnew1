@@ -17,7 +17,7 @@
 			  </p>
 		  <div class="well">
 		  		<%= f.error_notification %>
-			   <%= f.association :courses, as: :check_boxes, label: false %>
+			   <%= f.association :courses, collection: @active_courses, as: :check_boxes, label: false %>
 			  
 		 
 

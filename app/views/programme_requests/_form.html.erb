@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <div class="col-md-6">
   <div class="form-group">
-      <%= f.association :courses, as: :check_boxes, label: "Which courses are you interested in?" %>
+      <%= f.association :courses, collection: Course.active.all(order: 'name'), as: :check_boxes, label: "Which courses are you interested in?" %>
   </div>
   </div>
   <div class="col-md-6">

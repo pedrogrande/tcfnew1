@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :get_courses
 
   def get_courses
-  	@courses = Course.ordered_by_course_order.published
+  	@submenu_courses = Course.ordered_by_course_order.published
   end
 end

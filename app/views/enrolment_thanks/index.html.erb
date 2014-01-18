@@ -27,7 +27,7 @@
 <div class="col-md-3">
 	
 			<h3>Programme Downloads</h3>
-		<% @courses.each do |course| %>
+		<% @active_courses.each do |course| %>
 					<p><%= link_to course.programme.url, target: '_blank' do %>
 						<i class="fa fa-download"></i> 
 						<%= course.title %>

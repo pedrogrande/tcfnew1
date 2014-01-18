@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   def show
     @next_intake = @course.next_available_intakes.first
     @intakes = @course.future_intakes
-    @courses = Course.all
+    @courses = Course.active_courses
     @programme_request = ProgrammeRequest.new
   end
 

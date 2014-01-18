@@ -2,7 +2,7 @@
 <%= content_for :breadcrumb, 'Courses' %>
 <%= content_for :link, '/web-development-and-javascript-courses' %>
 <%= content_for :sub_breadcrumb, @course.title %>
-<%= content_for :title, @course.title + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
+<%= content_for :title, @course.title + ' Locations: ' + @course.intakes.first.location %>
 <%= content_for :description, @course.title + ': ' + @course.lead + @course.intro + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
@@ -15,9 +15,9 @@
 		<div class="row">
 			<div class="col-md-9">
 				<h3 class="hype"></h3>
-				<p><%= link_to new_enrolment_path(:course => @course), class: "btn btn-success" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
+				<p><%= link_to new_enrolment_path, class: "btn btn-success" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
 				&nbsp;
-				<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+				<%= link_to new_programme_request_path, class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
 				</p>
 				<p class="lead"><%= @course.intro.html_safe %></p>
 				<h3>The programme</h3>
@@ -33,7 +33,7 @@
 		<div class="row">
 			<div class="col-md-12 light-blue">
 			<h2>Upcoming classes</h2>
-				<% if @intakes.count > 0 %>
+				<% if @intakes && @intakes.count > 0 %>
 				<div>
 					<table class="table table-hover">
 					<thead>
@@ -88,7 +88,7 @@
 				<p class="sub-heading-upper">Actions</p>
 					<%= link_to new_enrolment_path(:course => @course), class: "btn btn-success btn-lg" do %><i class="fa fa-arrow-circle-right"></i> Enrol to reserve your place<% end %>
 					<br><br>
-					<%= link_to new_programme_request_path(:course => @course), class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
+					<%= link_to new_programme_request_path, class: 'btn btn-primary btn-sm' do %><i class="fa fa-download"></i> Download programme details<% end %>
 					
 
 				
