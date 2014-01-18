@@ -8,4 +8,16 @@ module HomeHelper
 			html = '<i class="fa fa-star grey"></i> ' * (course.course_order)
 		end
 	end
+
+	def number_to_word(number)
+		if number == 3
+			'three'
+		elsif number == 4
+			'four'
+		elsif number == 5
+			'five'
+		else
+			''
+		end
+	end
 end
