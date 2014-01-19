@@ -33,7 +33,8 @@
 		<!-- Footer meta info _______________________________________________-->
 		<footer class="entry-footer">
       <div class="entry-meta">
-        <p>Posted in: 
+        <p>Posted in:</p>
+        <p>
           <% post.categories.each do |category| %>
               <%= link_to category.name, blog_path(:category => category) %> 
           <% end %>
