@@ -4,11 +4,7 @@
 <%= content_for :sub_breadcrumb, @post.title %>
 <%= content_for :title, @post.title %>
 <%= content_for :description, @post.title + ' - ' + @post.lead + ' by ' + @post.user.name + '. Published on ' + @post.created_at.strftime('%A, %e %B %Y') %>
-<div class="wrapper">
 
-  <!-- MAIN CONTENT SECTION  _____________________________________________-->
-  <section id="content" role="main">
-  
     <!-- BLOG content  _____________________________________________-->
     <article id="post-1" class="post">
 
@@ -116,7 +112,5 @@
           
     </section>
     <!-- END #comments -->
-    
-      
-  </section>
+
   <!-- END #content --> 
