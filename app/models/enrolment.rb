@@ -8,7 +8,7 @@ class Enrolment < ActiveRecord::Base
     before_create :populate_guid
     before_save :get_total_price
 
-    
+    validates :intakes, presence: true
     private
       def populate_guid
         self.guid = SecureRandom.uuid()
