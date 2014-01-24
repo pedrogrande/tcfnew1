@@ -1,0 +1,33 @@
+<h1>Listing student_sites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Image</th>
+      <th>Screenshot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_sites.each do |student_site| %>
+      <tr>
+        <td><%= student_site.name %></td>
+        <td><%= student_site.url %></td>
+        <td><%= student_site.image %></td>
+        <td><%= student_site.screenshot %></td>
+        <td><%= link_to 'Show', student_site %></td>
+        <td><%= link_to 'Edit', edit_student_site_path(student_site) %></td>
+        <td><%= link_to 'Destroy', student_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student site', new_student_site_path %>

@@ -1,0 +1,2 @@
+module StudentSitesHelper
+end

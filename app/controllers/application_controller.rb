@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
 
   def get_courses
   	@submenu_courses = Course.ordered_by_course_order.published
+  	@student_sites = StudentSite.all
   end
 end

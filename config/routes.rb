@@ -1,4 +1,6 @@
 Tcfnew1::Application.routes.draw do
+  resources :student_sites
+
   resources :payments
 
   resources :sliders
