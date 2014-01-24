@@ -1,5 +1,6 @@
 class StudentSitesController < ApplicationController
   before_action :set_student_site, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /student_sites
   # GET /student_sites.json
