@@ -3,6 +3,8 @@ class Enrolment < ActiveRecord::Base
     has_many :courses, through: :course_enrolments
     has_many :payments
     validates :name, :email, :courses, presence: true
+    has_many :intake_enrolments
+    has_many :intakes, through: :intake_enrolments
     before_create :populate_guid
     before_save :get_total_price
 

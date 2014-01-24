@@ -27,9 +27,26 @@
 		  </div>
 		  </div>
 		  <div class="col-md-6 col-md-offset-1">
-		  <div class="form-group">
-		    <%= f.association :courses, collection: Course.active_courses, as: :check_boxes, label: 'Please select the course/s are you enrolling in?' %>
+		  
+
+		<div class="control-group check_boxes optional enrolment_intakes">
+		<h2>Please select your preferred intake for each course</h2>
+			<div class="controls">
+		  		<% @courses.each do |course| %>
+		  			<% if course.future_intakes.count > 0 %>
+				  		<strong><%= course.title %></strong><br>
+				  		<% course.future_intakes.each do |intake| %>
+				  			<label class="checkbox">
+				  				<input class="check_boxes optional" id="enrolment_intake_ids_<%= intake.id %>" name="enrolment[intake_ids][]" type="checkbox" value="<%= intake.id %>" />
+				  				<%= intake.start_date.strftime('%B') %> Intake - starting <%= intake.start_date.strftime('%e/%m/%y') %> (<%= intake.location %>)
+				  			</label>
+				  		<% end %>
+			  		<% end %>
+
+		  		<% end %>
+		  	</div>
 		  </div>
+		 
 		  </div>
 		  </div>
 		  <div class="row">

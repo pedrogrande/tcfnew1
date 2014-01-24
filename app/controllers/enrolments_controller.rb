@@ -15,6 +15,7 @@ class EnrolmentsController < ApplicationController
   # GET /enrolments/new
   def new
     @enrolment = Enrolment.new
+    @courses = Course.active_courses
   end
 
   # GET /enrolments/1/edit
@@ -25,6 +26,9 @@ class EnrolmentsController < ApplicationController
   # POST /enrolments.json
   def create
     @enrolment = Enrolment.new(enrolment_params)
+    @enrolment.intakes.each do |intake|
+      @enrolment.courses << intake.course
+    end
 
       respond_to do |format|
         if @enrolment.save
@@ -90,6 +94,6 @@ class EnrolmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrolment_params
-      params.require(:enrolment).permit(:name, :email, :phone, :linkedin, :github, :about, :study, :career, :reason, :goals, :follow_up, :course_ids => [])
+      params.require(:enrolment).permit(:name, :email, :phone, :linkedin, :github, :about, :study, :career, :reason, :goals, :follow_up, :course_ids => [], :intake_ids => [])
     end
 end
