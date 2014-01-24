@@ -39,7 +39,7 @@
 				  		<% course.future_intakes.each do |intake| %>
 				  			<label class="checkbox">
 				  				<input class="check_boxes optional" id="enrolment_intake_ids_<%= intake.id %>" name="enrolment[intake_ids][]" type="checkbox" value="<%= intake.id %>" />
-				  				<%= intake.start_date.strftime('%B') %> Intake - starting <%= intake.start_date.strftime('%e/%m/%y') %> (<%= intake.location %>)
+				  				<%= intake.start_date.strftime('%B') %> intake - starting <%= intake.start_date.strftime('%e/%m/%y') %> (<%= intake.location %>)
 				  			</label>
 				  		<% end %>
 				  		<br>

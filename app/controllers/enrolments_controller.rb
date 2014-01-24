@@ -15,7 +15,7 @@ class EnrolmentsController < ApplicationController
   # GET /enrolments/new
   def new
     @enrolment = Enrolment.new
-    @courses = Course.active_courses
+    @courses = Course.ordered_by_course_order
   end
 
   # GET /enrolments/1/edit
