@@ -5,6 +5,13 @@
   <%= @enrolment.name %>
 </p>
 
+<p><strong>Intake/s:</strong></p>
+<ul>
+  <% @enrolment.intakes.each do |intake| %>
+    <li><%= intake.start_date %> (<%= intake.course.title %>)</li>
+  <% end %>
+</ul>
+
 <p>
   <strong>Email:</strong>
   <%= @enrolment.email %>
