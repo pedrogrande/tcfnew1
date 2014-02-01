@@ -21,7 +21,13 @@
       </tr>
       <tr>
         <th><br>Courses:</th>
-        <td><ul><% @enrolment.courses.each do |course| %><li><%= course.title %></li> <% end %></ul></td>
+        <td>
+          <ul>
+            <% @enrolment.intakes.each do |intake| %>
+              <li><%= intake.course.title %>: <%= intake.start_date %></li> 
+            <% end %>
+          </ul>
+        </td>
       </tr>
     </table>
   </body>
