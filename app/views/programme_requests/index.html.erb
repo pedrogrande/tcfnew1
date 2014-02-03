@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Follow up</th>
+      <th>Courses</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +17,10 @@
       <tr>
         <td><%= programme_request.name %></td>
         <td><%= programme_request.email %></td>
-        <td><%= programme_request.follow_up %></td>
+        <td><% programme_request.courses.each do |course| %>
+              <p><%= course.title %></p>
+            <% end %>
+        </td>
         <td><%= link_to 'Show', programme_request %></td>
         <td><%= link_to 'Edit', edit_programme_request_path(programme_request) %></td>
         <td><%= link_to 'Destroy', programme_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
