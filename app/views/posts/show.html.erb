@@ -46,26 +46,17 @@
         <p class="lead"><%= @post.lead.html_safe %></p>
         <%= @post.content.html_safe %>
         <hr>
-        <div class="share">
-        <a id="ref_tw" href="http://twitter.com/home?status=<%= @post.title %>+<%= post_url(@post) %>&via=coderfactory"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;" data-via="coderfactory" data-count="none" data-hashtags="summerofcode" target="_blank" class="btn btn-lg twitter" title="Tweet to your followers"><i class="fa fa-twitter fa-fw"></i> Tweet </a>
-
-      <a id="ref_fb"  href="http://www.facebook.com/sharer.php?s=100&amp;p[title]=<%= @post.title %>&amp;p[summary]=<%= @post.lead %>&amp;p[url]=<%= post_url(@post) %>&amp;
-      p[images][0]=<%= @post.image %>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600'); return false;" target="_blank" title="Share with your Facebook friends" class="btn btn-lg facebook"><i class="fa fa-facebook fa-fw"></i> Share </a>
-
-      <a href="https://plus.google.com/share?url=<%= post_url(@post) %>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" title="Share with your circles Google+" class="btn btn-lg google-plus"><i class="fa fa-google-plus fa-fw"></i> +1 </a>
-
-      <a href="http://www.linkedin.com/shareArticle?mini=true&url=<%= post_url(@post) %>&title=<%= @post.title %>&summary=<%= @post.lead %>&source=TheCoderFactory" rel="nofollow" onclick="NewWindow(this.href,'template_window','550','400','yes','center');return false" onfocus="this.blur()" title="Share with your colleagues on LinkedIn" class="btn btn-lg linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i> Share</a>
-      </div>
+        
       <br>
         <!-- Footer meta info ______________________________________-->
         <footer class="entry-footer">
           <div class="entry-meta">
-            <p>Posted in: 
+            <p>Posted in: </p>
               <% @post.categories.each do |category| %>
                   <%= link_to category.name, blog_path(:category => category), class: 'btn btn-default'  %> 
               <% end %>
             </p>
-            <p>Hash tags:
+            <p>Hash tags:</p>
             <ul class="tags">
               <% @post.tag_list.each do |tag| %>
               <li><a href="#" rel="tag"><%= tag %></a></li> 
