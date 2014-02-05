@@ -13,24 +13,7 @@
 		  <%= f.error_notification %>
 		  <div class="row">
 		  <div class="col-md-5">
-		  <h2>Your details</h2>
-		  <div class="form-group">
-		    <%= f.input :name, input_html: { class: 'form-control'}, label: 'Please enter your name' %>
-		  </div>
-		  <div class="form-group">
-		    <%= f.input :email, input_html: { class: 'form-control'}, label: 'Please provide your email' %>
-		  </div>
-		  <div class="form-group">
-		    <%= f.input :phone, input_html: { class: 'form-control'}, label: 'Please divulge your contact number' %>
-		  </div>
-		  <div class="form-group">
-		    <%= f.input :linkedin, input_html: { class: 'form-control'}, label: 'Let us check you out on LinkedIn by providing the link to your profile.' %>
-		  </div>
-		  </div>
-		  <div class="col-md-6 col-md-offset-1">
-		  
-
-		<div class="control-group check_boxes optional enrolment_intakes">
+		  <div class="control-group check_boxes optional enrolment_intakes">
 		<h2>Select your intakes</h2>
 			<div class="controls">
 		  		<% @courses.each do |course| %>
@@ -48,6 +31,24 @@
 		  		<% end %>
 		  	</div>
 		  </div>
+		  
+		  </div>
+		  <div class="col-md-6 col-md-offset-1">
+		  	<h2>Your details</h2>
+		  	<div class="form-group">
+		  	  <%= f.input :name, input_html: { class: 'form-control'}, label: 'Please enter your name' %>
+		  	</div>
+		  	<div class="form-group">
+		  	  <%= f.input :email, input_html: { class: 'form-control'}, label: 'Please provide your email' %>
+		  	</div>
+		  	<div class="form-group">
+		  	  <%= f.input :phone, input_html: { class: 'form-control'}, label: 'Please divulge your contact number' %>
+		  	</div>
+		  	<div class="form-group">
+		  	  <%= f.input :linkedin, input_html: { class: 'form-control'}, label: 'Let us check you out on LinkedIn by providing the link to your profile.' %>
+		  	</div>
+
+		
 		 
 		  </div>
 		  </div>
