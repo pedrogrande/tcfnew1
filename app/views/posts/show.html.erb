@@ -4,6 +4,8 @@
 <%= content_for :sub_breadcrumb, @post.title %>
 <%= content_for :title, @post.title %>
 <%= content_for :description, @post.title + ' - ' + @post.lead + ' by ' + @post.user.name + '. Published on ' + @post.created_at.strftime('%A, %e %B %Y') %>
+<%= content_for :image, @post.image %>
+<%= content_for :author, @post.user.user_profile.twitter %>
 
     <!-- BLOG content  _____________________________________________-->
     <article id="post-1" class="post">
@@ -46,7 +48,16 @@
         <p class="lead"><%= @post.lead.html_safe %></p>
         <%= @post.content.html_safe %>
         <hr>
-        
+        <div class="well col-md-8">
+        <form action="http://thecoderfactory.us7.list-manage1.com/subscribe/post?u=1c644187b6d7e06d32bcae158&amp;id=2afdc8b0c3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div class="form-group">
+          <label for="mce-EMAIL">Stay up to date with the latest from The Coder Factory</label>
+          <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="subscribe with your email address" required></div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_1c644187b6d7e06d32bcae158_2afdc8b0c3" value=""></div>
+          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success"></div>
+        </form>
+</div>
       <br>
         <!-- Footer meta info ______________________________________-->
         <footer class="entry-footer">
