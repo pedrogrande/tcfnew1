@@ -34,6 +34,12 @@ Tcfnew1::Application.routes.draw do
   get "web-development-and-javascript-courses", to: "course_list#index"
   get "thanks" => "thanks#index"
   get "enrolment_thanks" => "enrolment_thanks#index"
+  get "adelaide" => "adelaide#index"
+  get "melbourne" => "melbourne#index"
+  get "sydney" => "sydney#index"
+  get "beginner_workshop_special" => "beginner_workshop_special#index"
+  get "beginner_coder_special" => "beginner_coder_special#index"
+  
   # get "bank_transfers" => "bank_transfers#index"
 
   # redirections
