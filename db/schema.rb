@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211074004) do
+ActiveRecord::Schema.define(version: 20140124121605) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20140211074004) do
     t.string   "image"
     t.boolean  "highlight"
     t.integer  "course_order"
-    t.boolean  "special"
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true

@@ -26,9 +26,6 @@
     <%= f.input :duration, input_html: { class: 'form-control'} %>
   </div>
   <div class="form-group">
-    <%= f.input :special %>
-  </div>
-  <div class="form-group">
     <%= f.input :active %>
   </div>
   <div class="form-group">
@@ -45,9 +42,6 @@
   </div>
   <div class="form-group">
     <%= f.input :course_order, input_html: { class: 'form-control'} %>
-  </div>
-  <div class="form-group">
-    <%= f.association :intakes, label_method: :start_date, as: :check_boxes %>
   </div>
 
   <div class="form-actions">

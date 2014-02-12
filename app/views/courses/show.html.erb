@@ -2,7 +2,7 @@
 <%= content_for :breadcrumb, 'Courses' %>
 <%= content_for :link, '/web-development-and-javascript-courses' %>
 <%= content_for :sub_breadcrumb, @course.title %>
-<%= content_for :title, @course.title + ' Locations: ' + @course.future_intakes.first.location %>
+<%= content_for :title, @course.title + ' Locations: ' + @course.intakes.first.location %>
 <%= content_for :description, @course.title + ': ' + @course.lead + @course.intro + ' Next start date: ' + @course.intakes.first.start_date.strftime('%e %h %Y').to_s %>
 <div class="row">
 <div class="col-md-8">
@@ -112,7 +112,7 @@
 		 	<h4 class="accordion-title"><a href="#"><%= course.title %></a></h4>
 		 	<div>
 		 		<p><span class="start-date">
-						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.future_intakes.first.start_date.strftime('%e %h %Y') %>
+						<%= course.duration %> | AUD <%= course.price %> | Class starts: <%= course.intakes.first.start_date.strftime('%e %h %Y') %>
 						</span>
 
 		 		<br><%= course.lead %></p>
