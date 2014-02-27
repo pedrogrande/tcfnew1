@@ -9,4 +9,13 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+  def destroy
+  	@user = User.friendly.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_path }
+      format.json { head :no_content }
+    end
+  end
+
 end
