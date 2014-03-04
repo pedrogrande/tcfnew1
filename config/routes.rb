@@ -11,6 +11,7 @@ Tcfnew1::Application.routes.draw do
   get "/ruby_on_rails_course_scholarship", to: redirect('/')
   get "/courses/summer-coder-camp-ruby-on-rails", to: redirect('/courses/summer-coder-camp-rails-angularjs')
   get "/courses/web-app-coder-pro", to: redirect('/courses/expert-coder')
+  get "/courses/beginner-coder-weekend-workshop-melbourne", to: redirect('courses/beginner-coder-weekend-workshop-melbourne-adelaide')
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
   resources :skills
