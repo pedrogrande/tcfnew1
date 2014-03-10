@@ -6,6 +6,11 @@
 <%= content_for :description, @post.title + ' - ' + @post.lead + ' by ' + @post.user.name + '. Published on ' + @post.created_at.strftime('%A, %e %B %Y') %>
 <%= content_for :image, @post.image %>
 <%= content_for :author, @post.user.user_profile.twitter %>
+<% if !@post.image.blank? %>
+      <%= content_for :image, @post.image %>
+    <% else %>
+      <%= content_for :image, @post.image_link %>
+    <% end %> 
 
     <!-- BLOG content  _____________________________________________-->
     <article id="post-1" class="post">
@@ -20,7 +25,11 @@
         </h1> 
         <!-- Post Featured Image ______________________________________-->
         <div class="post-image">
-          <%= image_tag @post.image, alt: @post.title %>  
+          <% if !@post.image.blank? %>
+                <%= image_tag @post.image, alt: @post.title %>
+              <% else %>
+                <%= image_tag @post.image_link, alt: @post.title %>
+              <% end %>  
         </div>  
 
         <!-- Meta info ______________________________________-->

@@ -3,7 +3,11 @@
     <h1><%= link_to post.title, post %></h1>  
 		<!-- Post Featured Image _______________________________________________-->
 		<div class="post-thumb">
-			<%= image_tag post.image, alt: post.title %>	
+    <% if !post.image.blank? %>
+			<%= image_tag post.image, alt: post.title %>
+    <% else %>
+      <%= image_tag post.image_link, alt: post.title %>
+    <% end %>
 		</div>
 								
 					<!-- Meta info _______________________________________________-->
