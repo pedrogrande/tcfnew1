@@ -12,7 +12,7 @@
   <% end %>
 </ul>
 
-<p><strong>GUID</strong>: <%= link_to @enrolment.guid, enrolment_path(@enrolment, guid: @enrolment.guid) %></p>
+<p><strong>GUID</strong>: <a href="https://thecoderfactory.com/transactions/new?guid='<%= @enrolment.guid %>'">Link to transaction</a></p>
 <p>
   <strong>Email:</strong>
   <%= @enrolment.email %>
