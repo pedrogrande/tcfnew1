@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @code_club_school.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @code_club_school.address %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @code_club_school.suburb %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @code_club_school.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @code_club_school.postcode %>
+</p>
+
+<%= link_to 'Edit', edit_code_club_school_path(@code_club_school) %> |
+<%= link_to 'Back', code_club_schools_path %>

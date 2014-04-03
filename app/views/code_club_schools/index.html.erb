@@ -1,0 +1,35 @@
+<h1>Listing code_club_schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Suburb</th>
+      <th>State</th>
+      <th>Postcode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @code_club_schools.each do |code_club_school| %>
+      <tr>
+        <td><%= code_club_school.name %></td>
+        <td><%= code_club_school.address %></td>
+        <td><%= code_club_school.suburb %></td>
+        <td><%= code_club_school.state %></td>
+        <td><%= code_club_school.postcode %></td>
+        <td><%= link_to 'Show', code_club_school %></td>
+        <td><%= link_to 'Edit', edit_code_club_school_path(code_club_school) %></td>
+        <td><%= link_to 'Destroy', code_club_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Code club school', new_code_club_school_path %>

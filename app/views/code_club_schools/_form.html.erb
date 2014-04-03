@@ -1,0 +1,20 @@
+<%= simple_form_for(@code_club_school) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :address, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :suburb, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :state, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :postcode, input_html: { class: 'form-control'} %>
+  </div>
+  <%= f.button :submit %>
+  
+<% end %>

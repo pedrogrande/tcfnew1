@@ -1,10 +1,4 @@
 Tcfnew1::Application.routes.draw do
-  resources :student_sites
-
-  resources :payments
-
-  resources :sliders
-
   root :to => "home#index"
   get "/courses/web-app-coder-ruby-on-rails", to: redirect('/courses/expert-coder')
   get "/courses/web-app-coder-angular-and-node", to: redirect('/courses/angular-coder')
@@ -36,7 +30,16 @@ Tcfnew1::Application.routes.draw do
   get "thanks" => "thanks#index"
   get "enrolment_thanks" => "enrolment_thanks#index"
   # get "bank_transfers" => "bank_transfers#index"
+  get "volunteer_thanks" => "volunteer_thanks#index"
+  resources :volunteers
 
+  resources :code_club_schools
+
+  resources :student_sites
+
+  resources :payments
+
+  resources :sliders
   # redirections
   
 

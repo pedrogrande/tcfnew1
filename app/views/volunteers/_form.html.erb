@@ -1,0 +1,77 @@
+<%= simple_form_for(@volunteer) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :first_name, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :last_name, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :email, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :phone, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :address, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :suburb, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :state, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.input :postcode, input_html: { class: 'form-control'} %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="control-group check_boxes optional volunteer_preferred_schools">
+        <label class="check_boxes optional control-label">Select the schools you are willing to volunteer at from the following.</label>
+        
+        <div class="controls">
+        <% @code_club_schools.each do |ccs| %>
+          <label class="checkbox">
+            <input class="check_boxes optional" id="volunteer_preferred_schools_<%= ccs.id %>" name="volunteer[preferred_schools][]" type="checkbox" value="<%= ccs.id %>" /><%= ccs.name %> (<%= ccs.suburb %>, <%= ccs.state %>)
+          </label>
+          <% end %>
+          <input name="volunteer[preferred_schools][]" type="hidden" value="" />
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  
+  <div class="form-group">
+    <%= f.input :message, label: "Tell us a bit about yourself and your availability.", input_html: { class: 'form-control', rows: 10} %>
+  </div>
+  <%= f.submit 'Register', class: 'btn btn-success btn-lg' %>
+  
+<% end %>
