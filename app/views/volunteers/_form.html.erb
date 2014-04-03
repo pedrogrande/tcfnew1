@@ -56,7 +56,7 @@
         <div class="controls">
         <% @code_club_schools.each do |ccs| %>
           <label class="checkbox">
-            <input class="check_boxes optional" id="volunteer_preferred_schools_<%= ccs.id %>" name="volunteer[preferred_schools][]" type="checkbox" value="<%= ccs.id %>" /><%= ccs.name %> (<%= ccs.suburb %>, <%= ccs.state %>)
+            <input class="check_boxes optional" id="volunteer_preferred_schools_<%= ccs.id %>" name="volunteer[preferred_schools][]" type="checkbox" value="<%= ccs.id %>" /><%= ccs.name %> (<%= ccs.suburb %>, <strong><%= ccs.state %></strong>)
           </label>
           <% end %>
           <input name="volunteer[preferred_schools][]" type="hidden" value="" />

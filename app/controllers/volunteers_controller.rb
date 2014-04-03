@@ -27,7 +27,7 @@ class VolunteersController < ApplicationController
   # POST /volunteers.json
   def create
     @volunteer = Volunteer.new(volunteer_params)
-
+    @code_club_schools = CodeClubSchool.order_by_state
     respond_to do |format|
       if @volunteer.save
         format.html { redirect_to volunteer_thanks_path, notice: 'Your registration has been sent.' }

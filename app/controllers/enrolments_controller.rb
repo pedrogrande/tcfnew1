@@ -29,7 +29,8 @@ class EnrolmentsController < ApplicationController
     @enrolment.intakes.each do |intake|
       @enrolment.courses << intake.course
     end
-
+    
+    @courses = Course.ordered_by_course_order
       respond_to do |format|
         if @enrolment.save
           EnrolmentMailer.received(@enrolment).deliver

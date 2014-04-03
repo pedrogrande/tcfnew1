@@ -1,6 +1,7 @@
 class CodeClubSchoolsController < ApplicationController
   before_action :set_code_club_school, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /code_club_schools
   # GET /code_club_schools.json
   def index
