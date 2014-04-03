@@ -15,7 +15,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers/new
   def new
     @volunteer = Volunteer.new
-    @code_club_schools = CodeClubSchool.order_by_state
+    @code_club_schools = CodeClubSchool.order_by_state.order_by_name
     # @states = @code_club_schools.map{|f| f.state}
   end
 
@@ -27,6 +27,7 @@ class VolunteersController < ApplicationController
   # POST /volunteers.json
   def create
     @volunteer = Volunteer.new(volunteer_params)
+    @volunteer.preferred_schools = @volunteer.preferred_schools.to_s
     @code_club_schools = CodeClubSchool.order_by_state
     respond_to do |format|
       if @volunteer.save
@@ -71,6 +72,6 @@ class VolunteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volunteer_params
-      params.require(:volunteer).permit(:first_name, :last_name, :email, :phone, :address, :suburb, :state, :postcode, :preferred_schools, :message)
+      params.require(:volunteer).permit(:first_name, :last_name, :email, :phone, :address, :suburb, :state, :postcode, :message, :code_club_school_ids => [])
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403002855) do
+ActiveRecord::Schema.define(version: 20140403033021) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -350,6 +350,16 @@ ActiveRecord::Schema.define(version: 20140403002855) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+
+  create_table "volunteer_schools", force: true do |t|
+    t.integer  "volunteer_id"
+    t.integer  "code_club_school_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "volunteer_schools", ["code_club_school_id"], name: "index_volunteer_schools_on_code_club_school_id"
+  add_index "volunteer_schools", ["volunteer_id"], name: "index_volunteer_schools_on_volunteer_id"
 
   create_table "volunteers", force: true do |t|
     t.string   "first_name"

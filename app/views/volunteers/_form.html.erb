@@ -49,18 +49,18 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-      <div class="control-group check_boxes optional volunteer_preferred_schools">
-        <label class="check_boxes optional control-label">Select the schools you are willing to volunteer at from the following.</label>
-        
+
+
+    <div class="form-group">
+      <div class="control-group check_boxes optional volunteer_code_club_schools">
+        <label class="check_boxes optional control-label">Code club schools</label>
         <div class="controls">
-        <% @code_club_schools.each do |ccs| %>
-          <label class="checkbox">
-            <input class="check_boxes optional" id="volunteer_preferred_schools_<%= ccs.id %>" name="volunteer[preferred_schools][]" type="checkbox" value="<%= ccs.id %>" /><%= ccs.name %> (<%= ccs.suburb %>, <strong><%= ccs.state %></strong>)
-          </label>
+          <% @code_club_schools.each do |ccs| %>
+            <label class="checkbox">
+              <input class="check_boxes optional" id="volunteer_code_club_school_ids_<%= ccs.id %>" name="volunteer[code_club_school_ids][]" type="checkbox" value="1" /><%= ccs.name %> <strong><%= ccs.state %></strong>
+            </label>
           <% end %>
-          <input name="volunteer[preferred_schools][]" type="hidden" value="" />
-        </div>
+        <input name="volunteer[code_club_school_ids][]" type="hidden" value="" /></div>
       </div>
     </div>
 

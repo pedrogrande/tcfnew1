@@ -1,54 +1,76 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @volunteer.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @volunteer.last_name %>
-</p>
+<table class="table">
 
-<p>
-  <strong>Email:</strong>
+
+<tr>
+<th>Name:</th>
+<td>
+  <%= @volunteer.first_name %> <%= @volunteer.last_name %>
+</td>
+</tr>
+
+<tr>
+<th>Email:</th>
+<td>
   <%= @volunteer.email %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Phone:</strong>
+<tr>
+<th>Phone:</th>
+<td>
   <%= @volunteer.phone %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Address:</strong>
+<tr>
+<th>Address:</th>
+<td>
   <%= @volunteer.address %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Suburb:</strong>
+<tr>
+<th>Suburb:</th>
+<td>
   <%= @volunteer.suburb %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>State:</strong>
+<tr>
+<th>State:</th>
+<td>
   <%= @volunteer.state %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Postcode:</strong>
+<tr>
+<th>Postcode:</th>
+<td>
   <%= @volunteer.postcode %>
-</p>
+</td>
+</tr>
 
-<p>
-  <strong>Preferred schools:</strong>
-  <%= @volunteer.preferred_schools %>
-</p>
+<tr>
+<th>Preferred schools:</th>
+<td>
+  <ul>
+  <% @volunteer.code_club_schools.each do |ccs| %>
+    <li><%= ccs.name %></li>
+  <% end %>
+  </ul>
+</td>
+</tr>
 
-<p>
-  <strong>Message:</strong>
+<tr>
+<th>Message:</th>
+<td>
   <%= @volunteer.message %>
-</p>
+</td>
+</tr>
+</table>
 
 <%= link_to 'Edit', edit_volunteer_path(@volunteer) %> |
 <%= link_to 'Back', volunteers_path %>

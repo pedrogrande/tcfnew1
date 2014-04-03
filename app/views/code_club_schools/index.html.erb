@@ -7,7 +7,7 @@
       <th>Address</th>
       <th>Suburb</th>
       <th>State</th>
-      <th>Postcode</th>
+      <th>Volunteers</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,7 +21,7 @@
         <td><%= code_club_school.address %></td>
         <td><%= code_club_school.suburb %></td>
         <td><%= code_club_school.state %></td>
-        <td><%= code_club_school.postcode %></td>
+        <td><%= code_club_school.volunteers.count %></td>
         <td><%= link_to 'Show', code_club_school %></td>
         <td><%= link_to 'Edit', edit_code_club_school_path(code_club_school) %></td>
         <td><%= link_to 'Destroy', code_club_school, method: :delete, data: { confirm: 'Are you sure?' } %></td>

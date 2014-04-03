@@ -25,5 +25,14 @@
   <%= @code_club_school.postcode %>
 </p>
 
+<p>
+  <strong>Volunteers:</strong>
+  <p>
+    <% @code_club_school.volunteers.each do |volunteer| %>
+      <%= link_to volunteer.first_name + volunteer.last_name, volunteer %>
+    <% end %>
+  </p>
+</p>
+
 <%= link_to 'Edit', edit_code_club_school_path(@code_club_school) %> |
 <%= link_to 'Back', code_club_schools_path %>
