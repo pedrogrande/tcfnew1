@@ -16,6 +16,7 @@ gem 'jquery-turbolinks'
 gem "cancan"
 gem "rolify"
 gem "carrierwave"
+gem "unf"
 gem "fog"
 gem 'truncate_html'
 gem 'gravatar_image_tag'
