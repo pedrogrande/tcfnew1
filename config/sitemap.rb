@@ -21,7 +21,7 @@ SitemapGenerator::Sitemap.create do
     # add web-development-and-javascript-courses_path, :changefreq => 'weekly'
     add about_path, :changefreq => 'weekly'
     add contact_path, :changefreq => 'weekly'
-    add calendar_path, :changefreq => 'weekly'
+    # add calendar_path, :changefreq => 'weekly'
   #
   # Add all articles:
   #
