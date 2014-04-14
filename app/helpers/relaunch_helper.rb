@@ -1,0 +1,2 @@
+module RelaunchHelper
+end

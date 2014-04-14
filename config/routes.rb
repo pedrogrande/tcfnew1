@@ -1,4 +1,5 @@
 Tcfnew1::Application.routes.draw do
+  get "relaunch/index"
   root :to => "home#index"
   get "/courses/web-app-coder-ruby-on-rails", to: redirect('/courses/expert-coder')
   get "/courses/web-app-coder-angular-and-node", to: redirect('/courses/angular-coder')
