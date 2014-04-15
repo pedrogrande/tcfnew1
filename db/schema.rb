@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(version: 20140403033021) do
     t.string   "image"
     t.boolean  "highlight"
     t.integer  "course_order"
-    t.boolean  "special"
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true
