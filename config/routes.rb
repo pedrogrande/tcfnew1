@@ -8,7 +8,7 @@ Tcfnew1::Application.routes.draw do
   get "/courses/web-app-coder-pro", to: redirect('/courses/expert-coder')
   get "/courses/beginner-coder-weekend-workshop-melbourne", to: redirect('courses/beginner-coder-weekend-workshop-melbourne-adelaide-sydney-brisbane-perth')
   get "/courses/beginner-coder-weekend-workshop-melbourne-adelaide", to: redirect('courses/beginner-coder-weekend-workshop-melbourne-adelaide-sydney-brisbane-perth')
-  devise_for :users, :skip => :registrations
+  devise_for :users
   resources :users
   resources :skills
   resources :intakes
