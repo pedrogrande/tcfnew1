@@ -3,14 +3,7 @@
 <%= content_for :link, '/blog' %>
 <%= content_for :sub_breadcrumb, @post.title %>
 <%= content_for :title, @post.title %>
-<%= content_for :description, @post.title + ' - ' + @post.lead + ' by ' + @post.user.name + '. Published on ' + @post.created_at.strftime('%A, %e %B %Y') %>
-<%= content_for :image, @post.image %>
-<%= content_for :author, @post.user.user_profile.twitter %>
-<% if !@post.image.blank? %>
-      <%= content_for :image, @post.image %>
-    <% else %>
-      <%= content_for :image, @post.image_link %>
-    <% end %> 
+<%= content_for :description, @post.title %>
 
     <!-- BLOG content  _____________________________________________-->
     <article id="post-1" class="post">
