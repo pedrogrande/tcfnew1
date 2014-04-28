@@ -3,7 +3,7 @@
 <%= content_for :link, '/blog' %>
 <%= content_for :sub_breadcrumb, @post.title %>
 <%= content_for :title, @post.title %>
-<%= content_for :description, @post.title %>
+<%= content_for :description, @post.title + ' ' + @post.lead %>
 
     <!-- BLOG content  _____________________________________________-->
     <article id="post-1" class="post">
