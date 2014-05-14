@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+
   def destroy
   	@user = User.friendly.find(params[:id])
     @user.destroy

@@ -96,7 +96,41 @@
 		<h2>The Coder Factory Team</h2>
 
 		<div class="row">
-			<%= render @users %>
+			<% @users.each_with_index do |user, index| %>
+			<% if (index + 1)%4 == 0 %>
+				<hr>
+				</div>
+				<div class="row">
+			<% end %>
+			<div class="team-member col-md-4">
+					<%= link_to user, class: "circle-image", alt: user.name, title: user.name do %>
+						<%= image_tag user.user_profile.image %>
+					<% end %>
+					<hgroup>
+						<h3><%= link_to user.user_profile.name, user %></h3>
+						<h4 class="small"><%= user.user_profile.title %></h4>
+					</hgroup>
+					<p>
+						<%= user.user_profile.bio %>
+					</p>
+					<ul class="social-icons">
+					<% if !user.user_profile.twitter.blank? %>
+						<li><a href="https://twitter.com/<%= user.user_profile.twitter %>" title="Twitter" target="_blank"><i class="fa fa-fw fa-twitter"></i> <span><%= user.user_profile.twitter %></span></a></li><br>
+					<% end %>
+		                <li><span class="author vcard"><a class="url fn n" rel="author" href="https://plus.google.com/<%= user.user_profile.google_plus %>" target="_blank" title="<%= user.name %>"><i class="fa fa-fw fa-google-plus"></i> <span><%= user.name %></span></a>
+		                </li><br>
+						<li><a href="<%= user.user_profile.linkedin %>" title="LinkedIn" target="_blank"><i class="fa fa-fw fa-linkedin"></i> <span>LinkedIn</span></a></li><br>
+						<li><a href="mailto:<%= user.email %>" title="Email" target="_blank"><i class="fa fa-fw fa-envelope"></i> <span><%= user.email %></span></a></li><br>
+						<li><a href="https://github.com/<%= user.user_profile.github %>" title="github" target="_blank"><i class="fa fa-fw fa-github"></i> <span>Github</span></a></li><br>
+						<% if !user.user_profile.startupcommunity.blank? %>
+						<li><a href="<%= user.user_profile.startupcommunity %>" title="The Startup Community" target="_blank"><i class="fa fa-fw fa-group"></i> <span>The Startup Community</span></a></li><br>
+						<% end %>
+						<% if !user.user_profile.website.blank? %>
+						<li><a href="<%= user.user_profile.website %>" title="<%= user.name %>'s website" target="_blank"><i class="fa fa-fw fa-globe"></i> <span>Website</span></a></li>
+						<% end %>
+					</ul>
+				</div> <!-- END .team-member -->
+			<% end %>
 		</div> 
 	</div>
 </div>
