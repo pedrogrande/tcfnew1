@@ -9,3 +9,4 @@ class ApplicationController < ActionController::Base
   	@student_sites = StudentSite.all
   end
 end
+

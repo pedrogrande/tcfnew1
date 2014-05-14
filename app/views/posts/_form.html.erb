@@ -1,6 +1,7 @@
 <%= simple_nested_form_for @post, :html => {:multipart => true} do |f| %>
   <%= f.error_notification %>
 <div class="form-group">
+    <%= f.association :user, input_html: { class: 'form-control' } %>
     <%= f.association :categories, as: :check_boxes %>
     <%= link_to "Add a category", new_category_path %>
   </div>
