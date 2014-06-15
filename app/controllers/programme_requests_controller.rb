@@ -8,7 +8,11 @@ class ProgrammeRequestsController < ApplicationController
     programme_requests_csv = CSV.generate do |csv|
       csv << ["Id", "Name", "Email", "Course"]
       @programme_requests.each do |programme_request|
-        csv << [programme_request.id, programme_request.name, programme_request.email, programme_request.course_ids]
+        @course_request = []
+        programme_request.courses.each do |course|
+          @course_request << course.title
+        end
+        csv << [programme_request.id, programme_request.name, programme_request.email, @course_request.to_s]
       end
     end
     send_data(programme_requests_csv, :type => 'text/csv', :filename => 'all_programme_requests.csv')
