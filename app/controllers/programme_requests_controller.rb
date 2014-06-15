@@ -1,7 +1,20 @@
 class ProgrammeRequestsController < ApplicationController
   before_action :set_programme_request, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:new, :create]
-  # GET /programme_requests
+  require 'csv'
+
+  def export
+    @programme_requests = ProgrammeRequest.all
+    programme_requests_csv = CSV.generate do |csv|
+      csv << ["Id", "Name", "Email", "Course"]
+      @programme_requests.each do |programme_request|
+        csv << [programme_request.id, programme_request.name, programme_request.email, programme_request.course_ids]
+      end
+    end
+    send_data(programme_requests_csv, :type => 'text/csv', :filename => 'all_programme_requests.csv')
+   end
+
+   # GET /programme_requests
   # GET /programme_requests.json
   def index
     @programme_requests = ProgrammeRequest.all

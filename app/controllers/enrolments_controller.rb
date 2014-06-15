@@ -1,6 +1,18 @@
 class EnrolmentsController < ApplicationController
   before_action :set_enrolment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:new, :create]
+  require 'csv'
+
+  def export
+    @enrolments = Enrolment.all
+    enrolments_csv = CSV.generate do |csv|
+      csv << ["Id", "Name", "Email", "Phone", "LinkedIn", "About", "Study", "Career", "Reason", "Goals", 'guid']
+      @enrolments.each do |enrolment|
+        csv << [enrolment.id, enrolment.name, enrolment.email, enrolment.phone, enrolment.linkedin, enrolment.about, enrolment.study, enrolment.career, enrolment.reason, enrolment.goals, "http://newcoderfactory1a5d.ninefold-apps.com/transactions/new?guid=" + enrolment.guid]
+      end
+    end
+    send_data(enrolments_csv, :type => 'text/csv', :filename => 'all_enrolments.csv')
+   end
   # GET /enrolments
   # GET /enrolments.json
   def index

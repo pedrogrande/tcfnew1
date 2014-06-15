@@ -43,7 +43,7 @@ Tcfnew1::Application.routes.draw do
 
   resources :sliders
   # redirections
-  
-
+  get "export_enrolments" => "enrolments#export"
+  get "export_programme_requests" => "programme_requests#export"
 
 end
