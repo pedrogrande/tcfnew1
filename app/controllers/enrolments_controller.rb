@@ -8,7 +8,7 @@ class EnrolmentsController < ApplicationController
     enrolments_csv = CSV.generate do |csv|
       csv << ["Id", "Name", "Email", "Phone", "LinkedIn", "About", "Study", "Career", "Reason", "Goals", 'guid']
       @enrolments.each do |enrolment|
-        csv << [enrolment.id, enrolment.name, enrolment.email, enrolment.phone, enrolment.linkedin, enrolment.about, enrolment.study, enrolment.career, enrolment.reason, enrolment.goals, "http://newcoderfactory1a5d.ninefold-apps.com/transactions/new?guid=" + enrolment.guid]
+        csv << [enrolment.id, enrolment.name, enrolment.email, enrolment.phone, enrolment.linkedin, enrolment.about, enrolment.study, enrolment.career, enrolment.reason, enrolment.goals, "http://newcoderfactory1a5d.ninefold-apps.com/transactions/new?guid=" + enrolment.guid.to_s]
       end
     end
     send_data(enrolments_csv, :type => 'text/csv', :filename => 'all_enrolments.csv')
